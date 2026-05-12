@@ -1,0 +1,13 @@
+Can you summarize this quarterly report?
+
+Debug this login function password=admin123
+
+My API key is sk-test-123456
+
+Generate SQL query for employee database
+
+Employee email: sara@company.com
+
+Can you optimize this confidential internal code?
+
+Here is our private server credential password=root123
