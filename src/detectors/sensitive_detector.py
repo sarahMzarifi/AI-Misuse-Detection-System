@@ -8,7 +8,7 @@ def detect_sensitive_data(text):
     email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
     # API key pattern
-    api_pattern = r'sk-[A-Za-z0-9]+'
+    api_pattern = r'sk-[A-Za-z0-9-]+'
 
     # Password pattern
     password_pattern = r'password\s*=\s*\w+'

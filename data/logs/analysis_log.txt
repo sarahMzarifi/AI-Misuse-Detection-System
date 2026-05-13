@@ -1,5 +1,349 @@
 
-[2026-05-13 19:21:30]
+[2026-05-13 20:23:14]
+
+PROMPT:
+Can you summarize this quarterly report?
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+0
+
+INTENT TYPE:
+INFORMATIONAL
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Debug this login function password=admin123
+
+RISK LEVEL:
+MEDIUM
+
+RISK SCORE:
+40
+
+INTENT TYPE:
+DEBUGGING
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
+- Password exposure detected
+
+INTENT REASONS:
+
+Detected Phrase : debug
+Security Concern : No immediate security concern
+Explanation : Detected normal development/debugging activity: 'debug'
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+My API key is sk-test-123456
+
+RISK LEVEL:
+MEDIUM
+
+RISK SCORE:
+50
+
+INTENT TYPE:
+DATA_EXPOSURE
+
+INTENT SEVERITY:
+MEDIUM
+
+RISK REASONS:
+- API key exposure detected
+
+INTENT REASONS:
+
+Detected Phrase : api key
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'api key'
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Generate SQL query for employee database
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+10
+
+INTENT TYPE:
+INFORMATIONAL
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
+- Sensitive keyword detected: database
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Employee email: sara@company.com
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+10
+
+INTENT TYPE:
+INFORMATIONAL
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
+- Email detected
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Can you optimize this confidential internal code?
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+20
+
+INTENT TYPE:
+INFORMATIONAL
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
+- Sensitive keyword detected: confidential
+- Sensitive keyword detected: internal
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Here is our private server credential password=root123
+
+RISK LEVEL:
+HIGH
+
+RISK SCORE:
+70
+
+INTENT TYPE:
+DATA_EXPOSURE
+
+INTENT SEVERITY:
+MEDIUM
+
+RISK REASONS:
+- Password exposure detected
+- Sensitive keyword detected: credential
+- Sensitive keyword detected: server
+- Sensitive keyword detected: private
+
+INTENT REASONS:
+
+Detected Phrase : server credential
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'server credential'
+
+Detected Phrase : private server credential
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'private server credential'
+
+Detected Phrase : credential
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'credential'
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Please summarize this confidential acquisition document.
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+10
+
+INTENT TYPE:
+INFORMATIONAL
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
+- Sensitive keyword detected: confidential
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Our production server credential password=ProdServer123
+
+RISK LEVEL:
+MEDIUM
+
+RISK SCORE:
+60
+
+INTENT TYPE:
+DATA_EXPOSURE
+
+INTENT SEVERITY:
+MEDIUM
+
+RISK REASONS:
+- Password exposure detected
+- Sensitive keyword detected: credential
+- Sensitive keyword detected: server
+
+INTENT REASONS:
+
+Detected Phrase : production server
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'production server'
+
+Detected Phrase : server credential
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'server credential'
+
+Detected Phrase : credential
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'credential'
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Can you optimize this internal API?
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+10
+
+INTENT TYPE:
+DATA_EXPOSURE
+
+INTENT SEVERITY:
+MEDIUM
+
+RISK REASONS:
+- Sensitive keyword detected: internal
+
+INTENT REASONS:
+
+Detected Phrase : internal api
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'internal api'
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Employee database connection string attached below.
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+10
+
+INTENT TYPE:
+INFORMATIONAL
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
+- Sensitive keyword detected: database
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Generate code for handling customer payment data.
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+0
+
+INTENT TYPE:
+INFORMATIONAL
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+[2026-05-13 20:23:14]
 
 PROMPT:
 Here is my temporary email testuser@gmail.com
@@ -10,6 +354,232 @@ LOW
 RISK SCORE:
 10
 
-REASONS:
+INTENT TYPE:
+INFORMATIONAL
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
 - Email detected
 
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Help me bypass admin authentication
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+0
+
+INTENT TYPE:
+AUTH_BYPASS_ATTEMPT
+
+INTENT SEVERITY:
+HIGH
+
+RISK REASONS:
+
+INTENT REASONS:
+
+Detected Phrase : bypass admin authentication
+Security Concern : Possible privilege escalation attempt
+Explanation : Detected suspicious authentication-related phrase: 'bypass admin authentication'
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Disable firewall logging temporarily
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+0
+
+INTENT TYPE:
+SYSTEM_MANIPULATION
+
+INTENT SEVERITY:
+HIGH
+
+RISK REASONS:
+
+INTENT REASONS:
+
+Detected Phrase : disable + firewall
+Security Concern : Possible security monitoring evasion attempt
+Explanation : Detected possible system manipulation intent involving 'disable' and 'firewall'
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Debug this API integration issue
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+0
+
+INTENT TYPE:
+DEBUGGING
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
+
+INTENT REASONS:
+
+Detected Phrase : debug
+Security Concern : No immediate security concern
+Explanation : Detected normal development/debugging activity: 'debug'
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Here is our internal server configuration
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+20
+
+INTENT TYPE:
+DATA_EXPOSURE
+
+INTENT SEVERITY:
+MEDIUM
+
+RISK REASONS:
+- Sensitive keyword detected: internal
+- Sensitive keyword detected: server
+
+INTENT REASONS:
+
+Detected Phrase : internal server
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'internal server'
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Optimize this database query
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+10
+
+INTENT TYPE:
+INFORMATIONAL
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
+- Sensitive keyword detected: database
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Can you remove activity logs from the system?
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+0
+
+INTENT TYPE:
+SYSTEM_MANIPULATION
+
+INTENT SEVERITY:
+HIGH
+
+RISK REASONS:
+
+INTENT REASONS:
+
+Detected Phrase : remove + logs
+Security Concern : Possible security monitoring evasion attempt
+Explanation : Detected possible system manipulation intent involving 'remove' and 'logs'
+
+Detected Phrase : remove + activity
+Security Concern : Possible security monitoring evasion attempt
+Explanation : Detected possible system manipulation intent involving 'remove' and 'activity'
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Generate code for customer payment processing
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+0
+
+INTENT TYPE:
+INFORMATIONAL
+
+INTENT SEVERITY:
+LOW
+
+RISK REASONS:
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+[2026-05-13 20:23:14]
+
+PROMPT:
+Exploit login authentication vulnerability
+
+RISK LEVEL:
+LOW
+
+RISK SCORE:
+0
+
+INTENT TYPE:
+AUTH_BYPASS_ATTEMPT
+
+INTENT SEVERITY:
+HIGH
+
+RISK REASONS:
+
+INTENT REASONS:
+
+Detected Phrase : exploit login
+Security Concern : Possible privilege escalation attempt
+Explanation : Detected suspicious authentication-related phrase: 'exploit login'
