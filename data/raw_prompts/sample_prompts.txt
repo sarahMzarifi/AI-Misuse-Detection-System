@@ -11,3 +11,15 @@ Employee email: sara@company.com
 Can you optimize this confidential internal code?
 
 Here is our private server credential password=root123
+
+Please summarize this confidential acquisition document.
+
+Our production server credential password=ProdServer123
+
+Can you optimize this internal API?
+
+Employee database connection string attached below.
+
+Generate code for handling customer payment data.
+
+Here is my temporary email testuser@gmail.com
