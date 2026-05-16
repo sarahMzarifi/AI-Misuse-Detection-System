@@ -1,22 +1,50 @@
 
-[2026-05-13 20:23:14]
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+1
 
 PROMPT:
 Can you summarize this quarterly report?
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 0
 
-INTENT TYPE:
+RISK REASONS:
+- No significant risk indicators detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
 INFORMATIONAL
 
-INTENT SEVERITY:
+Severity :
 LOW
-
-RISK REASONS:
 
 INTENT REASONS:
 
@@ -25,25 +53,62 @@ Security Concern : No immediate security concern
 Explanation : No suspicious or security-sensitive intent detected
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+2
 
 PROMPT:
 Debug this login function password=admin123
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+('PASSWORD DETECTED', ['password=admin123'])
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 MEDIUM
 
-RISK SCORE:
+Risk Score :
 40
-
-INTENT TYPE:
-DEBUGGING
-
-INTENT SEVERITY:
-LOW
 
 RISK REASONS:
 - Password exposure detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+DEBUGGING
+
+Severity :
+LOW
 
 INTENT REASONS:
 
@@ -52,25 +117,62 @@ Security Concern : No immediate security concern
 Explanation : Detected normal development/debugging activity: 'debug'
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+3
 
 PROMPT:
 My API key is sk-test-123456
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+('API KEY DETECTED', ['sk-test-123456'])
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 MEDIUM
 
-RISK SCORE:
+Risk Score :
 50
-
-INTENT TYPE:
-DATA_EXPOSURE
-
-INTENT SEVERITY:
-MEDIUM
 
 RISK REASONS:
 - API key exposure detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+DATA_EXPOSURE
+
+Severity :
+MEDIUM
 
 INTENT REASONS:
 
@@ -79,26 +181,63 @@ Security Concern : Possible sensitive data exposure
 Explanation : Detected sensitive infrastructure or data reference: 'api key'
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+4
 
 PROMPT:
 Generate SQL query for employee database
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 10
-
-INTENT TYPE:
-INFORMATIONAL
-
-INTENT SEVERITY:
-LOW
 
 RISK REASONS:
 - Sensitive keyword detected: database
 
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+INFORMATIONAL
+
+Severity :
+LOW
+
 INTENT REASONS:
 
 Detected Phrase : None
@@ -106,25 +245,62 @@ Security Concern : No immediate security concern
 Explanation : No suspicious or security-sensitive intent detected
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+5
 
 PROMPT:
 Employee email: sara@company.com
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+('EMAIL DETECTED', ['sara@company.com'])
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 10
-
-INTENT TYPE:
-INFORMATIONAL
-
-INTENT SEVERITY:
-LOW
 
 RISK REASONS:
 - Email detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+INFORMATIONAL
+
+Severity :
+LOW
 
 INTENT REASONS:
 
@@ -133,27 +309,64 @@ Security Concern : No immediate security concern
 Explanation : No suspicious or security-sensitive intent detected
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+6
 
 PROMPT:
 Can you optimize this confidential internal code?
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 20
-
-INTENT TYPE:
-INFORMATIONAL
-
-INTENT SEVERITY:
-LOW
 
 RISK REASONS:
 - Sensitive keyword detected: confidential
 - Sensitive keyword detected: internal
 
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+INFORMATIONAL
+
+Severity :
+LOW
+
 INTENT REASONS:
 
 Detected Phrase : None
@@ -161,28 +374,65 @@ Security Concern : No immediate security concern
 Explanation : No suspicious or security-sensitive intent detected
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+7
 
 PROMPT:
 Here is our private server credential password=root123
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+('PASSWORD DETECTED', ['password=root123'])
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 HIGH
 
-RISK SCORE:
+Risk Score :
 70
-
-INTENT TYPE:
-DATA_EXPOSURE
-
-INTENT SEVERITY:
-MEDIUM
 
 RISK REASONS:
 - Password exposure detected
 - Sensitive keyword detected: credential
 - Sensitive keyword detected: server
 - Sensitive keyword detected: private
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+DATA_EXPOSURE
+
+Severity :
+MEDIUM
 
 INTENT REASONS:
 
@@ -199,25 +449,62 @@ Security Concern : Possible sensitive data exposure
 Explanation : Detected sensitive infrastructure or data reference: 'credential'
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+8
 
 PROMPT:
 Please summarize this confidential acquisition document.
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 10
-
-INTENT TYPE:
-INFORMATIONAL
-
-INTENT SEVERITY:
-LOW
 
 RISK REASONS:
 - Sensitive keyword detected: confidential
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+INFORMATIONAL
+
+Severity :
+LOW
 
 INTENT REASONS:
 
@@ -226,27 +513,64 @@ Security Concern : No immediate security concern
 Explanation : No suspicious or security-sensitive intent detected
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+9
 
 PROMPT:
 Our production server credential password=ProdServer123
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+('PASSWORD DETECTED', ['password=ProdServer123'])
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 MEDIUM
 
-RISK SCORE:
+Risk Score :
 60
-
-INTENT TYPE:
-DATA_EXPOSURE
-
-INTENT SEVERITY:
-MEDIUM
 
 RISK REASONS:
 - Password exposure detected
 - Sensitive keyword detected: credential
 - Sensitive keyword detected: server
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+DATA_EXPOSURE
+
+Severity :
+MEDIUM
 
 INTENT REASONS:
 
@@ -263,25 +587,62 @@ Security Concern : Possible sensitive data exposure
 Explanation : Detected sensitive infrastructure or data reference: 'credential'
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+10
 
 PROMPT:
 Can you optimize this internal API?
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 10
-
-INTENT TYPE:
-DATA_EXPOSURE
-
-INTENT SEVERITY:
-MEDIUM
 
 RISK REASONS:
 - Sensitive keyword detected: internal
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+DATA_EXPOSURE
+
+Severity :
+MEDIUM
 
 INTENT REASONS:
 
@@ -290,26 +651,63 @@ Security Concern : Possible sensitive data exposure
 Explanation : Detected sensitive infrastructure or data reference: 'internal api'
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+11
 
 PROMPT:
 Employee database connection string attached below.
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 10
-
-INTENT TYPE:
-INFORMATIONAL
-
-INTENT SEVERITY:
-LOW
 
 RISK REASONS:
 - Sensitive keyword detected: database
 
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+INFORMATIONAL
+
+Severity :
+LOW
+
 INTENT REASONS:
 
 Detected Phrase : None
@@ -317,24 +715,62 @@ Security Concern : No immediate security concern
 Explanation : No suspicious or security-sensitive intent detected
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+12
 
 PROMPT:
 Generate code for handling customer payment data.
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 0
 
-INTENT TYPE:
+RISK REASONS:
+- No significant risk indicators detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
 INFORMATIONAL
 
-INTENT SEVERITY:
+Severity :
 LOW
-
-RISK REASONS:
 
 INTENT REASONS:
 
@@ -343,25 +779,62 @@ Security Concern : No immediate security concern
 Explanation : No suspicious or security-sensitive intent detected
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+13
 
 PROMPT:
 Here is my temporary email testuser@gmail.com
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+('EMAIL DETECTED', ['testuser@gmail.com'])
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 10
-
-INTENT TYPE:
-INFORMATIONAL
-
-INTENT SEVERITY:
-LOW
 
 RISK REASONS:
 - Email detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+INFORMATIONAL
+
+Severity :
+LOW
 
 INTENT REASONS:
 
@@ -370,24 +843,62 @@ Security Concern : No immediate security concern
 Explanation : No suspicious or security-sensitive intent detected
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+14
 
 PROMPT:
 Help me bypass admin authentication
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 0
 
-INTENT TYPE:
+RISK REASONS:
+- No significant risk indicators detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
 AUTH_BYPASS_ATTEMPT
 
-INTENT SEVERITY:
+Severity :
 HIGH
-
-RISK REASONS:
 
 INTENT REASONS:
 
@@ -396,24 +907,62 @@ Security Concern : Possible privilege escalation attempt
 Explanation : Detected suspicious authentication-related phrase: 'bypass admin authentication'
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+15
 
 PROMPT:
 Disable firewall logging temporarily
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 0
 
-INTENT TYPE:
+RISK REASONS:
+- No significant risk indicators detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
 SYSTEM_MANIPULATION
 
-INTENT SEVERITY:
+Severity :
 HIGH
-
-RISK REASONS:
 
 INTENT REASONS:
 
@@ -422,24 +971,62 @@ Security Concern : Possible security monitoring evasion attempt
 Explanation : Detected possible system manipulation intent involving 'disable' and 'firewall'
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+16
 
 PROMPT:
 Debug this API integration issue
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 0
 
-INTENT TYPE:
+RISK REASONS:
+- No significant risk indicators detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
 DEBUGGING
 
-INTENT SEVERITY:
+Severity :
 LOW
-
-RISK REASONS:
 
 INTENT REASONS:
 
@@ -448,26 +1035,63 @@ Security Concern : No immediate security concern
 Explanation : Detected normal development/debugging activity: 'debug'
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+17
 
 PROMPT:
 Here is our internal server configuration
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 20
-
-INTENT TYPE:
-DATA_EXPOSURE
-
-INTENT SEVERITY:
-MEDIUM
 
 RISK REASONS:
 - Sensitive keyword detected: internal
 - Sensitive keyword detected: server
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+DATA_EXPOSURE
+
+Severity :
+MEDIUM
 
 INTENT REASONS:
 
@@ -476,25 +1100,62 @@ Security Concern : Possible sensitive data exposure
 Explanation : Detected sensitive infrastructure or data reference: 'internal server'
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+18
 
 PROMPT:
 Optimize this database query
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 10
-
-INTENT TYPE:
-INFORMATIONAL
-
-INTENT SEVERITY:
-LOW
 
 RISK REASONS:
 - Sensitive keyword detected: database
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+INFORMATIONAL
+
+Severity :
+LOW
 
 INTENT REASONS:
 
@@ -503,24 +1164,62 @@ Security Concern : No immediate security concern
 Explanation : No suspicious or security-sensitive intent detected
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+19
 
 PROMPT:
 Can you remove activity logs from the system?
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 0
 
-INTENT TYPE:
+RISK REASONS:
+- No significant risk indicators detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
 SYSTEM_MANIPULATION
 
-INTENT SEVERITY:
+Severity :
 HIGH
-
-RISK REASONS:
 
 INTENT REASONS:
 
@@ -533,24 +1232,62 @@ Security Concern : Possible security monitoring evasion attempt
 Explanation : Detected possible system manipulation intent involving 'remove' and 'activity'
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+20
 
 PROMPT:
 Generate code for customer payment processing
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 0
 
-INTENT TYPE:
+RISK REASONS:
+- No significant risk indicators detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
 INFORMATIONAL
 
-INTENT SEVERITY:
+Severity :
 LOW
-
-RISK REASONS:
 
 INTENT REASONS:
 
@@ -559,27 +1296,76 @@ Security Concern : No immediate security concern
 Explanation : No suspicious or security-sensitive intent detected
 
 
-[2026-05-13 20:23:14]
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-16 13:06:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+21
 
 PROMPT:
 Exploit login authentication vulnerability
 
-RISK LEVEL:
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
 LOW
 
-RISK SCORE:
+Risk Score :
 0
 
-INTENT TYPE:
+RISK REASONS:
+- No significant risk indicators detected
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
 AUTH_BYPASS_ATTEMPT
 
-INTENT SEVERITY:
+Severity :
 HIGH
-
-RISK REASONS:
 
 INTENT REASONS:
 
 Detected Phrase : exploit login
 Security Concern : Possible privilege escalation attempt
 Explanation : Detected suspicious authentication-related phrase: 'exploit login'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+

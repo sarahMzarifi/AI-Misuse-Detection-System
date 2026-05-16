@@ -2,10 +2,32 @@ from datetime import datetime
 
 def save_log(content):
 
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # GENERATE FORENSIC TIMESTAMP
 
-    with open("../data/logs/analysis_log.txt", "a") as file:
+    timestamp = datetime.now().strftime(
+        "%Y-%m-%d %H:%M:%S"
+    )
 
-        file.write(f"\n[{timestamp}]\n")
-        file.write(content)
-        file.write("\n")
+    # FORENSIC LOG HEADER
+
+    log_entry = f"""
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : {timestamp}
+================================================
+
+{content}
+
+================================================
+END OF RECORD
+================================================
+
+"""
+    # SAVE LOG ENTRY
+
+    with open(
+        "../data/logs/analysis_log.txt",
+        "a"
+    ) as file:
+
+        file.write(log_entry)
