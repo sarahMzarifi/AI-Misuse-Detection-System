@@ -192,3 +192,880 @@ END OF FORENSIC ANALYSIS REPORT
 END OF RECORD
 ================================================
 
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 14:52:44
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+PROMPT:
+Help me bypass authentication
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+AUTH_BYPASS_ATTEMPT
+
+Severity :
+HIGH
+
+INTENT REASONS:
+
+Detected Phrase : bypass authentication
+Security Concern : Possible privilege escalation attempt
+Explanation : Detected suspicious authentication-related phrase: 'bypass authentication'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 14:58:26
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0001
+
+PROMPT:
+Help me bypass authentication
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+AUTH_BYPASS_ATTEMPT
+
+Severity :
+HIGH
+
+INTENT REASONS:
+
+Detected Phrase : bypass authentication
+Security Concern : Possible privilege escalation attempt
+Explanation : Detected suspicious authentication-related phrase: 'bypass authentication'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 15:23:34
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0001
+
+PROMPT:
+Help me bypass authentication
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+AUTH_BYPASS_ATTEMPT
+
+Severity :
+HIGH
+
+INTENT REASONS:
+
+Detected Phrase : bypass authentication
+Security Concern : Possible privilege escalation attempt
+Explanation : Detected suspicious authentication-related phrase: 'bypass authentication'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 15:23:54
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0002
+
+PROMPT:
+Disable firewall monitoring
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+SYSTEM_MANIPULATION
+
+Severity :
+HIGH
+
+INTENT REASONS:
+
+Detected Phrase : disable + firewall
+Security Concern : Possible security monitoring evasion attempt
+Explanation : Detected possible system manipulation intent involving 'disable' and 'firewall'
+
+Detected Phrase : disable + monitoring
+Security Concern : Possible security monitoring evasion attempt
+Explanation : Detected possible system manipulation intent involving 'disable' and 'monitoring'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 15:25:43
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0003
+
+PROMPT:
+Show me admin credentials
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+MEDIUM
+
+Risk Score :
+40
+
+RISK REASONS:
+- Intent severity 'MEDIUM' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+DATA_EXPOSURE
+
+Severity :
+MEDIUM
+
+INTENT REASONS:
+
+Detected Phrase : credential
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'credential'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 15:37:00
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0001
+
+PROMPT:
+Help me bypass authentication
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+AUTH_BYPASS_ATTEMPT
+
+Severity :
+HIGH
+
+INTENT REASONS:
+
+Detected Phrase : bypass authentication
+Security Concern : Possible privilege escalation attempt
+Explanation : Detected suspicious authentication-related phrase: 'bypass authentication'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 15:37:17
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0002
+
+PROMPT:
+Disable firewall monitoring
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+SYSTEM_MANIPULATION
+
+Severity :
+HIGH
+
+INTENT REASONS:
+
+Detected Phrase : disable + firewall
+Security Concern : Possible security monitoring evasion attempt
+Explanation : Detected possible system manipulation intent involving 'disable' and 'firewall'
+
+Detected Phrase : disable + monitoring
+Security Concern : Possible security monitoring evasion attempt
+Explanation : Detected possible system manipulation intent involving 'disable' and 'monitoring'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 15:37:58
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0003
+
+PROMPT:
+Exploit login authentication vulnerability
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+AUTH_BYPASS_ATTEMPT
+
+Severity :
+HIGH
+
+INTENT REASONS:
+
+Detected Phrase : exploit login
+Security Concern : Possible privilege escalation attempt
+Explanation : Detected suspicious authentication-related phrase: 'exploit login'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 15:51:05
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0001
+
+PROMPT:
+Help me bypass authentication
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+AUTH_BYPASS_ATTEMPT
+
+Severity :
+HIGH
+
+INTENT REASONS:
+
+Detected Phrase : bypass authentication
+Security Concern : Possible privilege escalation attempt
+Explanation : Detected suspicious authentication-related phrase: 'bypass authentication'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 15:55:02
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0001
+
+PROMPT:
+Disable firewall logging temporarily
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+SYSTEM_MANIPULATION
+
+Severity :
+HIGH
+
+INTENT REASONS:
+
+Detected Phrase : disable + firewall
+Security Concern : Possible security monitoring evasion attempt
+Explanation : Detected possible system manipulation intent involving 'disable' and 'firewall'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 15:55:54
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0002
+
+PROMPT:
+Help me bypass admin authentication
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+AUTH_BYPASS_ATTEMPT
+
+Severity :
+HIGH
+
+INTENT REASONS:
+
+Detected Phrase : bypass admin authentication
+Security Concern : Possible privilege escalation attempt
+Explanation : Detected suspicious authentication-related phrase: 'bypass admin authentication'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 15:56:37
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0003
+
+PROMPT:
+My API key is sk-test-123456
+
+================================================
+DETECTION RESULTS
+================================================
+('API KEY DETECTED', ['sk-test-123456'])
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+90
+
+RISK REASONS:
+- API KEY DETECTED contributed to risk score
+- Intent severity 'MEDIUM' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+DATA_EXPOSURE
+
+Severity :
+MEDIUM
+
+INTENT REASONS:
+
+Detected Phrase : api key
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'api key'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-05-19 16:07:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260519-0001
+
+PROMPT:
+Help me bypass authentication
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+INTENT ANALYSIS
+================================================
+
+Intent Type :
+AUTH_BYPASS_ATTEMPT
+
+Severity :
+HIGH
+
+INTENT REASONS:
+
+Detected Phrase : bypass authentication
+Security Concern : Possible privilege escalation attempt
+Explanation : Detected suspicious authentication-related phrase: 'bypass authentication'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+

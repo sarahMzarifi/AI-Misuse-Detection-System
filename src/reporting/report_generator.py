@@ -1,5 +1,6 @@
 def generate_report(
     analysis_result,
+    request_id=None,
     prompt_number=None
 ):
 
@@ -29,6 +30,9 @@ FORENSIC PROMPT ANALYSIS REPORT
 
 PROMPT NUMBER:
 {prompt_number}
+
+REQUEST ID:
+{request_id}
 
 PROMPT:
 {prompt}
