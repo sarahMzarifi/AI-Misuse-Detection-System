@@ -41,6 +41,10 @@ from utils.logger import (
     save_log
 )
 
+from security.policy_engine import (
+    evaluate_security_policy
+)
+
 from api.schemas.response_models import (
     APIResponse,
     ErrorResponse
@@ -199,13 +203,9 @@ def threat_history():
 
 def analyze(request: PromptRequest):
 
+    request_id = generate_request_id()
+
     try:
-
-        # -----------------------------------------
-        # GENERATE REQUEST ID
-        # -----------------------------------------
-
-        request_id = generate_request_id()
 
         # -----------------------------------------
         # CYBERSECURITY ANALYSIS
@@ -270,6 +270,55 @@ def analyze(request: PromptRequest):
         )
 
         # -----------------------------------------
+        # EVALUATE SECURITY POLICY
+        # -----------------------------------------
+
+        security_decision = (
+            evaluate_security_policy(
+
+                analysis_result,
+
+                pattern_analysis
+
+            )
+        )
+
+        # -----------------------------------------
+        # ENFORCE SECURITY BLOCKING POLICY
+        # -----------------------------------------
+
+        if security_decision[
+            "decision"
+        ] == "BLOCK":
+
+            return {
+
+                "status":
+                "blocked",
+
+                "request_id":
+                request_id,
+
+                "timestamp":
+                datetime.now().strftime(
+                    "%Y-%m-%d %H:%M:%S"
+                ),
+
+                "message":
+                "Request blocked by security policy",
+
+                "analysis_result":
+                analysis_result,
+
+                "pattern_analysis":
+                pattern_analysis,
+
+                "security_decision":
+                security_decision
+
+            }
+
+        # -----------------------------------------
         # GENERATE FORENSIC REPORT
         # -----------------------------------------
 
@@ -307,7 +356,10 @@ def analyze(request: PromptRequest):
             analysis_result,
 
             "pattern_analysis":
-            pattern_analysis
+            pattern_analysis,
+
+            "security_decision":
+            security_decision
 
         }
 

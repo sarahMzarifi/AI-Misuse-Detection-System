@@ -17,6 +17,20 @@ def create_security_event(
 ):
 
     # -----------------------------------------
+    # DETERMINE EVENT SEVERITY
+    # -----------------------------------------
+
+    event_severity = "INFO"
+
+    if risk_level == "HIGH":
+
+        event_severity = "WARNING"
+
+    if severity == "HIGH":
+
+        event_severity = "CRITICAL"
+
+    # -----------------------------------------
     # STRUCTURED EVENT OBJECT
     # -----------------------------------------
 
@@ -24,6 +38,9 @@ def create_security_event(
 
         "event_type":
         "HIGH_RISK_PROMPT",
+
+        "event_severity":
+        event_severity,
 
         "request_id":
         request_id,
