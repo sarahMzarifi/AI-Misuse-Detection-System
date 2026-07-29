@@ -79,6 +79,225 @@ def analyze_intent(prompt):
             })
 
     # -----------------------------------------
+    # PROMPT INJECTION DETECTION
+    # -----------------------------------------
+
+    prompt_injection_keywords = [
+
+        "ignore previous instructions",
+        "ignore all previous instructions",
+        "forget previous instructions",
+        "forget everything above",
+        "reveal your system prompt",
+        "show your system prompt",
+        "display your system prompt",
+        "what is your system prompt",
+        "repeat your instructions",
+        "developer instructions",
+        "system instructions",
+        "override previous instructions",
+        "bypass ai restrictions",
+        "ignore safety policies",
+        "pretend to be unrestricted",
+        "jailbreak",
+        "dan mode"
+
+    ]
+
+    for keyword in prompt_injection_keywords:
+
+        if keyword in prompt_lower:
+
+            intent_type = "PROMPT_INJECTION"
+            severity = "HIGH"
+
+            reasons.append({
+
+                "detected_phrase": keyword,
+
+                "security_concern":
+                "Possible prompt injection attempt",
+
+                "explanation":
+                f"Detected prompt injection phrase: '{keyword}'"
+
+            })
+
+    # -----------------------------------------
+    # SOCIAL ENGINEERING DETECTION
+    # -----------------------------------------
+
+    social_engineering_keywords = [
+
+        "phishing",
+        "phishing email",
+        "credential harvesting",
+        "social engineering",
+        "fake login page"
+
+    ]
+
+    for keyword in social_engineering_keywords:
+
+        if keyword in prompt_lower:
+
+            intent_type = "SOCIAL_ENGINEERING"
+            severity = "HIGH"
+
+            reasons.append({
+
+                "detected_phrase": keyword,
+
+                "security_concern":
+                "Possible social engineering attempt",
+
+                "explanation":
+                f"Detected social engineering phrase: '{keyword}'"
+
+            })
+
+    social_actions = [
+
+        "trick",
+        "convince",
+        "impersonate",
+        "pretend",
+        "deceive",
+        "steal",
+        "harvest",
+        "obtain"
+
+    ]
+
+    social_targets = [
+
+        "user",
+        "employee",
+        "password",
+        "credential",
+        "credentials",
+        "otp",
+        "verification code",
+        "login",
+        "account",
+        "it support",
+        "hr"
+
+    ]
+
+    for action in social_actions:
+
+        for target in social_targets:
+
+            if action in prompt_lower and target in prompt_lower:
+
+                intent_type = "SOCIAL_ENGINEERING"
+                severity = "HIGH"
+
+                reasons.append({
+
+                    "detected_phrase":
+                    f"{action} + {target}",
+
+                    "security_concern":
+                    "Possible social engineering attempt",
+
+                    "explanation":
+                    f"Detected possible social engineering activity involving '{action}' and '{target}'"
+
+                })
+
+    # -----------------------------------------
+    # MALICIOUS CODE DETECTION
+    # -----------------------------------------
+
+    malicious_code_keywords = [
+
+        "malware",
+        "ransomware",
+        "spyware",
+        "keylogger",
+        "trojan",
+        "worm",
+        "virus",
+        "botnet",
+        "rootkit",
+        "backdoor",
+        "reverse shell"
+
+    ]
+
+    for keyword in malicious_code_keywords:
+
+        if keyword in prompt_lower:
+
+            intent_type = "MALICIOUS_CODE_REQUEST"
+            severity = "HIGH"
+
+            reasons.append({
+
+                "detected_phrase": keyword,
+
+                "security_concern":
+                "Possible malicious code request",
+
+                "explanation":
+                f"Detected malicious software reference: '{keyword}'"
+
+            })
+
+    malicious_actions = [
+
+        "create",
+        "write",
+        "generate",
+        "develop",
+        "build",
+        "code",
+        "implement"
+
+    ]
+
+    malicious_targets = [
+
+        "malware",
+        "ransomware",
+        "spyware",
+        "keylogger",
+        "trojan",
+        "worm",
+        "virus",
+        "botnet",
+        "rootkit",
+        "backdoor",
+        "reverse shell",
+        "payload"
+
+    ]
+
+    for action in malicious_actions:
+
+        for target in malicious_targets:
+
+            if action in prompt_lower and target in prompt_lower:
+
+                intent_type = "MALICIOUS_CODE_REQUEST"
+                severity = "HIGH"
+
+                reasons.append({
+
+                    "detected_phrase":
+                    f"{action} + {target}",
+
+                    "security_concern":
+                    "Possible malicious code generation request",
+
+                    "explanation":
+                    f"Detected possible malicious code generation involving '{action}' and '{target}'"
+
+                })
+
+    # -----------------------------------------
     # SYSTEM MANIPULATION DETECTION
     # -----------------------------------------
 
@@ -117,6 +336,7 @@ def analyze_intent(prompt):
 
                     "explanation":
                     f"Detected possible system manipulation intent involving '{action}' and '{target}'"
+
                 })
 
     # -----------------------------------------
@@ -135,9 +355,6 @@ def analyze_intent(prompt):
 
         if keyword in prompt_lower:
 
-            # Only classify as debugging
-            # if no higher-risk intent already exists
-
             if intent_type == "INFORMATIONAL":
 
                 intent_type = "DEBUGGING"
@@ -152,6 +369,7 @@ def analyze_intent(prompt):
 
                     "explanation":
                     f"Detected normal development/debugging activity: '{keyword}'"
+
                 })
 
     # -----------------------------------------
@@ -169,6 +387,7 @@ def analyze_intent(prompt):
 
             "explanation":
             "No suspicious or security-sensitive intent detected"
+
         })
 
     # -----------------------------------------
@@ -178,8 +397,7 @@ def analyze_intent(prompt):
     return {
 
         "intent_type": intent_type,
-
         "severity": severity,
-
         "reasons": reasons
+
     }

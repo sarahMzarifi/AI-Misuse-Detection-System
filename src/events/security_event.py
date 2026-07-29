@@ -10,11 +10,33 @@ def create_security_event(
 
     risk_level,
 
-    intent_type,
-
-    severity
+    threat_classification
 
 ):
+
+    # -----------------------------------------
+    # EXTRACT THREAT INFORMATION
+    # -----------------------------------------
+
+    threat_category = threat_classification[
+        "category"
+    ]
+
+    threat_family = threat_classification[
+        "family"
+    ]
+
+    threat_type = threat_classification[
+        "type"
+    ]
+
+    threat_confidence = threat_classification[
+        "confidence"
+    ]
+
+    threat_priority = threat_classification[
+        "priority"
+    ]
 
     # -----------------------------------------
     # DETERMINE EVENT SEVERITY
@@ -26,7 +48,11 @@ def create_security_event(
 
         event_severity = "WARNING"
 
-    if severity == "HIGH":
+    if threat_priority == "HIGH":
+
+        event_severity = "CRITICAL"
+
+    if threat_priority == "CRITICAL":
 
         event_severity = "CRITICAL"
 
@@ -53,11 +79,20 @@ def create_security_event(
         "risk_level":
         risk_level,
 
-        "intent_type":
-        intent_type,
+        "threat_category":
+        threat_category,
 
-        "severity":
-        severity
+        "threat_family":
+        threat_family,
+
+        "threat_type":
+        threat_type,
+
+        "threat_confidence":
+        threat_confidence,
+
+        "threat_priority":
+        threat_priority
 
     }
 

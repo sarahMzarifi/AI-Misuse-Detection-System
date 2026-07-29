@@ -45,9 +45,18 @@ from security.policy_engine import (
     evaluate_security_policy
 )
 
-from api.schemas.response_models import (
-    APIResponse,
-    ErrorResponse
+from security.threat_classifier import (
+    classify_threat
+)
+
+from security.response_builder import (
+
+    build_success_response,
+
+    build_blocked_response,
+
+    build_error_response
+
 )
 
 # -----------------------------------------
@@ -216,6 +225,14 @@ def analyze(request: PromptRequest):
         )
 
         # -----------------------------------------
+        # STANDARDIZE THREAT CLASSIFICATION
+        # -----------------------------------------
+
+        threat_classification = classify_threat(
+            analysis_result
+        )
+
+        # -----------------------------------------
         # STORE SIGNIFICANT THREAT EVENTS
         # -----------------------------------------
 
@@ -235,13 +252,7 @@ def analyze(request: PromptRequest):
 
                 risk_level=risk_level,
 
-                intent_type=analysis_result[
-                    "intent_analysis"
-                ]["intent_type"],
-
-                severity=analysis_result[
-                    "intent_analysis"
-                ]["severity"]
+                threat_classification=threat_classification
 
             )
 
@@ -276,7 +287,7 @@ def analyze(request: PromptRequest):
         security_decision = (
             evaluate_security_policy(
 
-                analysis_result,
+                threat_classification,
 
                 pattern_analysis
 
@@ -287,36 +298,25 @@ def analyze(request: PromptRequest):
         # ENFORCE SECURITY BLOCKING POLICY
         # -----------------------------------------
 
-        if security_decision[
-            "decision"
-        ] == "BLOCK":
+        if security_decision["decision"] == "BLOCK":
 
-            return {
+            return build_blocked_response(
 
-                "status":
-                "blocked",
+                request_id=request_id,
 
-                "request_id":
-                request_id,
-
-                "timestamp":
-                datetime.now().strftime(
+                timestamp=datetime.now().strftime(
                     "%Y-%m-%d %H:%M:%S"
                 ),
 
-                "message":
-                "Request blocked by security policy",
+                analysis_result=analysis_result,
 
-                "analysis_result":
-                analysis_result,
+                threat_classification=threat_classification,
 
-                "pattern_analysis":
-                pattern_analysis,
+                pattern_analysis=pattern_analysis,
 
-                "security_decision":
-                security_decision
+                security_decision=security_decision
 
-            }
+            )
 
         # -----------------------------------------
         # GENERATE FORENSIC REPORT
@@ -325,6 +325,8 @@ def analyze(request: PromptRequest):
         forensic_report = generate_report(
 
             analysis_result,
+
+            threat_classification,
 
             request_id=request_id
 
@@ -342,26 +344,23 @@ def analyze(request: PromptRequest):
         # STANDARDIZED SUCCESS RESPONSE
         # -----------------------------------------
 
-        return {
+        return build_success_response(
 
-            "status": "success",
+            request_id=request_id,
 
-            "request_id": request_id,
-
-            "timestamp": datetime.now().strftime(
+            timestamp=datetime.now().strftime(
                 "%Y-%m-%d %H:%M:%S"
             ),
 
-            "analysis_result":
-            analysis_result,
+            analysis_result=analysis_result,
 
-            "pattern_analysis":
-            pattern_analysis,
+            threat_classification=threat_classification,
 
-            "security_decision":
-            security_decision
+            pattern_analysis=pattern_analysis,
 
-        }
+            security_decision=security_decision
+
+        )
 
     except Exception as error:
 
@@ -369,18 +368,16 @@ def analyze(request: PromptRequest):
         # STANDARDIZED ERROR RESPONSE
         # -----------------------------------------
 
-        return {
+        return build_error_response(
 
-            "status": "error",
+            request_id=request_id,
 
-            "request_id": request_id,
-
-            "timestamp": datetime.now().strftime(
+            timestamp=datetime.now().strftime(
                 "%Y-%m-%d %H:%M:%S"
             ),
 
-            "message": "Analysis failed",
+            message="Analysis failed",
 
-            "details": str(error)
+            details=str(error)
 
-        }
+        )

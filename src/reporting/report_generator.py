@@ -1,10 +1,13 @@
 def generate_report(
     analysis_result,
+    threat_classification,
     request_id=None,
     prompt_number=None
 ):
 
+    # -----------------------------------------
     # EXTRACT ANALYSIS COMPONENTS
+    # -----------------------------------------
 
     prompt = analysis_result["prompt"]
 
@@ -20,7 +23,33 @@ def generate_report(
         "intent_analysis"
     ]
 
+    # -----------------------------------------
+    # EXTRACT THREAT CLASSIFICATION
+    # -----------------------------------------
+
+    threat_category = threat_classification[
+        "category"
+    ]
+
+    threat_family = threat_classification[
+        "family"
+    ]
+
+    threat_type = threat_classification[
+        "type"
+    ]
+
+    threat_confidence = threat_classification[
+        "confidence"
+    ]
+
+    threat_priority = threat_classification[
+        "priority"
+    ]
+
+    # -----------------------------------------
     # REPORT HEADER
+    # -----------------------------------------
 
     report = f"""
 
@@ -42,7 +71,9 @@ DETECTION RESULTS
 ================================================
 """
 
+    # -----------------------------------------
     # DETECTION RESULTS
+    # -----------------------------------------
 
     if detection_results:
 
@@ -56,7 +87,9 @@ DETECTION RESULTS
             "No sensitive data detected\n"
         )
 
+    # -----------------------------------------
     # RISK ANALYSIS
+    # -----------------------------------------
 
     report += f"""
 
@@ -72,30 +105,54 @@ Risk Score :
 
 RISK REASONS:
 """
+
     if not risk_analysis["reasons"]:
 
-            report += (
+        report += (
             "- No significant risk indicators detected\n"
-            )
+        )
 
     else:
+
         for reason in risk_analysis["reasons"]:
 
             report += f"- {reason}\n"
 
-    # INTENT ANALYSIS
+    # -----------------------------------------
+    # THREAT CLASSIFICATION
+    # -----------------------------------------
 
     report += f"""
 
 ================================================
-INTENT ANALYSIS
+THREAT CLASSIFICATION
 ================================================
 
-Intent Type :
-{intent_analysis['intent_type']}
+Threat Category :
+{threat_category}
 
-Severity :
-{intent_analysis['severity']}
+Threat Family :
+{threat_family}
+
+Threat Type :
+{threat_type}
+
+Confidence :
+{threat_confidence}
+
+Priority :
+{threat_priority}
+"""
+
+    # -----------------------------------------
+    # INTENT ANALYSIS DETAILS
+    # -----------------------------------------
+
+    report += """
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
 
 INTENT REASONS:
 """
@@ -117,7 +174,9 @@ INTENT REASONS:
             f"{reason['explanation']}\n"
         )
 
+    # -----------------------------------------
     # REPORT FOOTER
+    # -----------------------------------------
 
     report += """
 
@@ -125,6 +184,9 @@ INTENT REASONS:
 END OF FORENSIC ANALYSIS REPORT
 ================================================
 """
-    #RETURN FINAL REPORT
+
+    # -----------------------------------------
+    # RETURN FINAL REPORT
+    # -----------------------------------------
 
     return report
