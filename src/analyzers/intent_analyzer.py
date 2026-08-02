@@ -1,9 +1,11 @@
+from security.intent_resolver import (
+    resolve_intent
+)
 def analyze_intent(prompt):
 
     prompt_lower = prompt.lower()
 
-    intent_type = "INFORMATIONAL"
-    severity = "LOW"
+    detected_intents = []
 
     reasons = []
 
@@ -12,6 +14,7 @@ def analyze_intent(prompt):
     # -----------------------------------------
 
     auth_bypass_keywords = [
+
         "bypass authentication",
         "bypass admin authentication",
         "bypass admin login",
@@ -21,14 +24,13 @@ def analyze_intent(prompt):
         "exploit login",
         "privilege escalation",
         "authentication bypass"
+
     ]
 
     for keyword in auth_bypass_keywords:
 
         if keyword in prompt_lower:
 
-            intent_type = "AUTH_BYPASS_ATTEMPT"
-            severity = "HIGH"
 
             reasons.append({
 
@@ -39,6 +41,14 @@ def analyze_intent(prompt):
 
                 "explanation":
                 f"Detected suspicious authentication-related phrase: '{keyword}'"
+
+            })
+            detected_intents.append({
+
+                "intent": "AUTH_BYPASS_ATTEMPT",
+
+                "severity": "HIGH"
+
             })
 
     # -----------------------------------------
@@ -46,6 +56,7 @@ def analyze_intent(prompt):
     # -----------------------------------------
 
     data_exposure_keywords = [
+
         "api key",
         "database credential",
         "internal server",
@@ -56,16 +67,12 @@ def analyze_intent(prompt):
         "private server credential",
         "credential",
         "internal api"
+
     ]
 
     for keyword in data_exposure_keywords:
 
         if keyword in prompt_lower:
-
-            intent_type = "DATA_EXPOSURE"
-
-            if severity != "HIGH":
-                severity = "MEDIUM"
 
             reasons.append({
 
@@ -76,12 +83,123 @@ def analyze_intent(prompt):
 
                 "explanation":
                 f"Detected sensitive infrastructure or data reference: '{keyword}'"
+
             })
+            detected_intents.append({
+
+                "intent": "DATA_EXPOSURE",
+
+                "severity": "MEDIUM"
+            })
+
+    # -----------------------------------------
+    # CREDENTIAL THEFT DETECTION
+    # -----------------------------------------
+
+    credential_theft_keywords = [
+
+        "steal password",
+        "steal credentials",
+        "dump credentials",
+        "extract credentials",
+        "password dump",
+        "credential dump",
+        "password database",
+        "login credentials",
+        "user credentials",
+        "authentication token",
+        "api token",
+        "access token",
+        "refresh token",
+        "jwt token",
+        "oauth token",
+        "session token",
+        "session cookie",
+        "steal cookie"
+
+    ]
+
+    for keyword in credential_theft_keywords:
+
+        if keyword in prompt_lower:
+
+            reasons.append({
+
+                "detected_phrase": keyword,
+
+                "security_concern":
+                "Possible credential theft attempt",
+
+                "explanation":
+                f"Detected credential theft related phrase: '{keyword}'"
+
+            })
+            detected_intents.append({
+
+                "intent": "CREDENTIAL_THEFT",
+
+                "severity": "HIGH"
+
+            })
+
+    credential_theft_actions = [
+
+        "steal",
+        "dump",
+        "extract",
+        "obtain",
+        "capture",
+        "collect",
+        "retrieve"
+
+    ]
+
+    credential_theft_targets = [
+
+        "password",
+        "passwords",
+        "credential",
+        "credentials",
+        "token",
+        "tokens",
+        "cookie",
+        "cookies",
+        "session",
+        "jwt",
+        "oauth"
+
+    ]
+
+    for action in credential_theft_actions:
+
+        for target in credential_theft_targets:
+
+            if action in prompt_lower and target in prompt_lower:
+
+                detected_intents.append({
+
+                    "intent": "CREDENTIAL_THEFT",
+
+                    "severity": "HIGH"
+
+                })
+
+                reasons.append({
+
+                    "detected_phrase":
+                    f"{action} + {target}",
+
+                    "security_concern":
+                    "Possible credential theft attempt",
+
+                    "explanation":
+                    f"Detected possible credential theft activity involving '{action}' and '{target}'"
+
+                })
 
     # -----------------------------------------
     # PROMPT INJECTION DETECTION
     # -----------------------------------------
-
     prompt_injection_keywords = [
 
         "ignore previous instructions",
@@ -108,9 +226,6 @@ def analyze_intent(prompt):
 
         if keyword in prompt_lower:
 
-            intent_type = "PROMPT_INJECTION"
-            severity = "HIGH"
-
             reasons.append({
 
                 "detected_phrase": keyword,
@@ -120,6 +235,13 @@ def analyze_intent(prompt):
 
                 "explanation":
                 f"Detected prompt injection phrase: '{keyword}'"
+
+            })
+            detected_intents.append({
+
+                "intent": "PROMPT_INJECTION",
+
+                "severity": "HIGH"
 
             })
 
@@ -141,9 +263,6 @@ def analyze_intent(prompt):
 
         if keyword in prompt_lower:
 
-            intent_type = "SOCIAL_ENGINEERING"
-            severity = "HIGH"
-
             reasons.append({
 
                 "detected_phrase": keyword,
@@ -153,6 +272,13 @@ def analyze_intent(prompt):
 
                 "explanation":
                 f"Detected social engineering phrase: '{keyword}'"
+
+            })
+            detected_intents.append({
+
+                "intent": "SOCIAL_ENGINEERING",
+
+                "severity": "HIGH"
 
             })
 
@@ -191,9 +317,6 @@ def analyze_intent(prompt):
 
             if action in prompt_lower and target in prompt_lower:
 
-                intent_type = "SOCIAL_ENGINEERING"
-                severity = "HIGH"
-
                 reasons.append({
 
                     "detected_phrase":
@@ -204,6 +327,13 @@ def analyze_intent(prompt):
 
                     "explanation":
                     f"Detected possible social engineering activity involving '{action}' and '{target}'"
+
+                })
+                detected_intents.append({
+
+                    "intent": "SOCIAL_ENGINEERING",
+
+                    "severity": "HIGH"
 
                 })
 
@@ -231,9 +361,6 @@ def analyze_intent(prompt):
 
         if keyword in prompt_lower:
 
-            intent_type = "MALICIOUS_CODE_REQUEST"
-            severity = "HIGH"
-
             reasons.append({
 
                 "detected_phrase": keyword,
@@ -243,6 +370,13 @@ def analyze_intent(prompt):
 
                 "explanation":
                 f"Detected malicious software reference: '{keyword}'"
+
+            })
+            detected_intents.append({
+
+                "intent": "MALICIOUS_CODE_REQUEST",
+
+                "severity": "HIGH"
 
             })
 
@@ -281,9 +415,6 @@ def analyze_intent(prompt):
 
             if action in prompt_lower and target in prompt_lower:
 
-                intent_type = "MALICIOUS_CODE_REQUEST"
-                severity = "HIGH"
-
                 reasons.append({
 
                     "detected_phrase":
@@ -296,25 +427,36 @@ def analyze_intent(prompt):
                     f"Detected possible malicious code generation involving '{action}' and '{target}'"
 
                 })
+                detected_intents.append({
+
+                    "intent": "MALICIOUS_CODE_REQUEST",
+
+                    "severity": "HIGH"
+
+                })
 
     # -----------------------------------------
     # SYSTEM MANIPULATION DETECTION
     # -----------------------------------------
 
     manipulation_keywords = [
+
         "disable",
         "evade",
         "avoid",
         "remove",
         "hide"
+
     ]
 
     security_targets = [
+
         "firewall",
         "monitoring",
         "logs",
         "activity",
         "detection"
+
     ]
 
     for action in manipulation_keywords:
@@ -322,9 +464,6 @@ def analyze_intent(prompt):
         for target in security_targets:
 
             if action in prompt_lower and target in prompt_lower:
-
-                intent_type = "SYSTEM_MANIPULATION"
-                severity = "HIGH"
 
                 reasons.append({
 
@@ -338,27 +477,31 @@ def analyze_intent(prompt):
                     f"Detected possible system manipulation intent involving '{action}' and '{target}'"
 
                 })
+                detected_intents.append({
+
+                    "intent": "SYSTEM_MANIPULATION",
+
+                    "severity": "HIGH"
+
+                })
 
     # -----------------------------------------
     # DEBUGGING / NORMAL DEVELOPMENT DETECTION
     # -----------------------------------------
 
     debugging_keywords = [
+
         "debug",
         "fix this code",
         "optimize function",
         "resolve error",
         "improve performance"
+
     ]
 
     for keyword in debugging_keywords:
 
         if keyword in prompt_lower:
-
-            if intent_type == "INFORMATIONAL":
-
-                intent_type = "DEBUGGING"
-                severity = "LOW"
 
                 reasons.append({
 
@@ -369,6 +512,13 @@ def analyze_intent(prompt):
 
                     "explanation":
                     f"Detected normal development/debugging activity: '{keyword}'"
+
+                })
+                detected_intents.append({
+
+                    "intent": "DEBUGGING",
+
+                    "severity": "LOW"
 
                 })
 
@@ -390,14 +540,31 @@ def analyze_intent(prompt):
 
         })
 
+        detected_intents.append({
+
+            "intent": "INFORMATIONAL",
+
+            "severity": "LOW"
+
+        })
+
     # -----------------------------------------
     # STRUCTURED OUTPUT
     # -----------------------------------------
 
+    resolved_intent = resolve_intent(
+        detected_intents
+    )
+
     return {
 
-        "intent_type": intent_type,
-        "severity": severity,
-        "reasons": reasons
+        "intent_type":
+        resolved_intent["intent_type"],
+
+        "severity":
+        resolved_intent["severity"],
+
+        "reasons":
+        reasons
 
     }

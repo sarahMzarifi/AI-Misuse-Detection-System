@@ -69,6 +69,10 @@ def classify_threat(analysis_result):
     from the analysis results.
     """
 
+    # -----------------------------------------
+    # EXTRACT INTENT ANALYSIS
+    # -----------------------------------------
+
     intent_analysis = analysis_result.get(
         "intent_analysis",
         {}
@@ -92,15 +96,20 @@ def classify_threat(analysis_result):
 
         return {
 
-            "category": SAFE_REQUEST,
+            "category":
+            SAFE_REQUEST,
 
-            "family": NO_THREAT,
+            "family":
+            NO_THREAT,
 
-            "type": SAFE,
+            "type":
+            SAFE,
 
-            "confidence": HIGH_CONFIDENCE,
+            "confidence":
+            HIGH_CONFIDENCE,
 
-            "priority": LOW_PRIORITY
+            "priority":
+            LOW_PRIORITY
 
         }
 
@@ -108,19 +117,24 @@ def classify_threat(analysis_result):
     # PROMPT INJECTION
     # -----------------------------------------
 
-    if intent_type == "Prompt Injection":
+    if intent_type == "PROMPT_INJECTION":
 
         return {
 
-            "category": PROMPT_INJECTION,
+            "category":
+            PROMPT_INJECTION,
 
-            "family": INSTRUCTION_MANIPULATION,
+            "family":
+            INSTRUCTION_MANIPULATION,
 
-            "type": SYSTEM,
+            "type":
+            SYSTEM,
 
-            "confidence": HIGH_CONFIDENCE,
+            "confidence":
+            HIGH_CONFIDENCE,
 
-            "priority": CRITICAL_PRIORITY
+            "priority":
+            CRITICAL_PRIORITY
 
         }
 
@@ -128,59 +142,99 @@ def classify_threat(analysis_result):
     # SYSTEM MANIPULATION
     # -----------------------------------------
 
-    if intent_type == "System Manipulation":
+    if intent_type == "SYSTEM_MANIPULATION":
 
         return {
 
-            "category": SYSTEM_MANIPULATION,
+            "category":
+            SYSTEM_MANIPULATION,
 
-            "family": INSTRUCTION_MANIPULATION,
+            "family":
+            INSTRUCTION_MANIPULATION,
 
-            "type": SYSTEM,
+            "type":
+            SYSTEM,
 
-            "confidence": HIGH_CONFIDENCE,
+            "confidence":
+            HIGH_CONFIDENCE,
 
-            "priority": HIGH_PRIORITY
+            "priority":
+            HIGH_PRIORITY
 
         }
 
     # -----------------------------------------
-    # DATA EXFILTRATION
+    # DATA EXPOSURE / EXFILTRATION
     # -----------------------------------------
 
-    if intent_type == "Sensitive Data Exposure":
+    if intent_type == "DATA_EXPOSURE":
 
         return {
 
-            "category": DATA_EXFILTRATION,
+            "category":
+            DATA_EXFILTRATION,
 
-            "family": INFORMATION_DISCLOSURE,
+            "family":
+            INFORMATION_DISCLOSURE,
 
-            "type": DATA,
+            "type":
+            DATA,
 
-            "confidence": HIGH_CONFIDENCE,
+            "confidence":
+            HIGH_CONFIDENCE,
 
-            "priority": CRITICAL_PRIORITY
+            "priority":
+            CRITICAL_PRIORITY
 
         }
 
     # -----------------------------------------
-    # CREDENTIAL ATTACK
+    # AUTHENTICATION BYPASS
     # -----------------------------------------
 
-    if intent_type == "Authentication Bypass":
+    if intent_type == "AUTH_BYPASS_ATTEMPT":
 
         return {
 
-            "category": CREDENTIAL_ATTACK,
+            "category":
+            CREDENTIAL_ATTACK,
 
-            "family": AUTHENTICATION_ATTACK,
+            "family":
+            AUTHENTICATION_ATTACK,
 
-            "type": ACCESS,
+            "type":
+            ACCESS,
 
-            "confidence": HIGH_CONFIDENCE,
+            "confidence":
+            HIGH_CONFIDENCE,
 
-            "priority": CRITICAL_PRIORITY
+            "priority":
+            CRITICAL_PRIORITY
+
+        }
+
+    # -----------------------------------------
+    # CREDENTIAL THEFT
+    # -----------------------------------------
+
+    if intent_type == "CREDENTIAL_THEFT":
+
+        return {
+
+            "category":
+            CREDENTIAL_ATTACK,
+
+            "family":
+            AUTHENTICATION_ATTACK,
+
+            "type":
+            ACCESS,
+
+            "confidence":
+            HIGH_CONFIDENCE,
+
+            "priority":
+            CRITICAL_PRIORITY
 
         }
 
@@ -188,19 +242,24 @@ def classify_threat(analysis_result):
     # SOCIAL ENGINEERING
     # -----------------------------------------
 
-    if intent_type == "Social Engineering":
+    if intent_type == "SOCIAL_ENGINEERING":
 
         return {
 
-            "category": SOCIAL_ENGINEERING,
+            "category":
+            SOCIAL_ENGINEERING,
 
-            "family": SOCIAL_ENGINEERING_ATTACK,
+            "family":
+            SOCIAL_ENGINEERING_ATTACK,
 
-            "type": BEHAVIORAL,
+            "type":
+            BEHAVIORAL,
 
-            "confidence": MEDIUM_CONFIDENCE,
+            "confidence":
+            MEDIUM_CONFIDENCE,
 
-            "priority": HIGH_PRIORITY
+            "priority":
+            HIGH_PRIORITY
 
         }
 
@@ -208,55 +267,74 @@ def classify_threat(analysis_result):
     # MALICIOUS CODE REQUEST
     # -----------------------------------------
 
-    if intent_type == "Malicious Code Generation":
+    if intent_type == "MALICIOUS_CODE_REQUEST":
 
         return {
 
-            "category": MALICIOUS_CODE_REQUEST,
+            "category":
+            MALICIOUS_CODE_REQUEST,
 
-            "family": MALICIOUS_CODE_GENERATION,
+            "family":
+            MALICIOUS_CODE_GENERATION,
 
-            "type": CODE,
+            "type":
+            CODE,
 
-            "confidence": HIGH_CONFIDENCE,
+            "confidence":
+            HIGH_CONFIDENCE,
 
-            "priority": HIGH_PRIORITY
+            "priority":
+            HIGH_PRIORITY
 
         }
 
     # -----------------------------------------
-    # GENERIC SUSPICIOUS ACTIVITY
+    # GENERIC MEDIUM-RISK ACTIVITY
     # -----------------------------------------
 
     if severity == "MEDIUM":
 
         return {
 
-            "category": SUSPICIOUS_ACTIVITY,
+            "category":
+            SUSPICIOUS_ACTIVITY,
 
-            "family": ABNORMAL_BEHAVIOR,
+            "family":
+            ABNORMAL_BEHAVIOR,
 
-            "type": BEHAVIORAL,
+            "type":
+            BEHAVIORAL,
 
-            "confidence": MEDIUM_CONFIDENCE,
+            "confidence":
+            MEDIUM_CONFIDENCE,
 
-            "priority": MEDIUM_PRIORITY
+            "priority":
+            MEDIUM_PRIORITY
 
         }
+
+    # -----------------------------------------
+    # GENERIC HIGH-RISK ACTIVITY
+    # -----------------------------------------
 
     if severity == "HIGH":
 
         return {
 
-            "category": SUSPICIOUS_ACTIVITY,
+            "category":
+            SUSPICIOUS_ACTIVITY,
 
-            "family": ABNORMAL_BEHAVIOR,
+            "family":
+            ABNORMAL_BEHAVIOR,
 
-            "type": BEHAVIORAL,
+            "type":
+            BEHAVIORAL,
 
-            "confidence": HIGH_CONFIDENCE,
+            "confidence":
+            HIGH_CONFIDENCE,
 
-            "priority": HIGH_PRIORITY
+            "priority":
+            HIGH_PRIORITY
 
         }
 
@@ -266,14 +344,19 @@ def classify_threat(analysis_result):
 
     return {
 
-        "category": UNKNOWN_THREAT,
+        "category":
+        UNKNOWN_THREAT,
 
-        "family": UNCLASSIFIED,
+        "family":
+        UNCLASSIFIED,
 
-        "type": UNKNOWN,
+        "type":
+        UNKNOWN,
 
-        "confidence": LOW_CONFIDENCE,
+        "confidence":
+        LOW_CONFIDENCE,
 
-        "priority": LOW_PRIORITY
+        "priority":
+        LOW_PRIORITY
 
     }

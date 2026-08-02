@@ -4386,3 +4386,585 @@ END OF FORENSIC ANALYSIS REPORT
 END OF RECORD
 ================================================
 
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-02 17:41:09
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260802-0001
+
+PROMPT:
+How do I steal user credentials from a website?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SOCIAL_ENGINEERING
+
+Threat Family :
+SOCIAL_ENGINEERING_ATTACK
+
+Threat Type :
+BEHAVIORAL
+
+Confidence :
+MEDIUM
+
+Priority :
+HIGH
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : credential
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'credential'
+
+Detected Phrase : user credentials
+Security Concern : Possible credential theft attempt
+Explanation : Detected credential theft related phrase: 'user credentials'
+
+Detected Phrase : steal + credential
+Security Concern : Possible credential theft attempt
+Explanation : Detected possible credential theft activity involving 'steal' and 'credential'
+
+Detected Phrase : steal + credentials
+Security Concern : Possible credential theft attempt
+Explanation : Detected possible credential theft activity involving 'steal' and 'credentials'
+
+Detected Phrase : steal + user
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'user'
+
+Detected Phrase : steal + credential
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'credential'
+
+Detected Phrase : steal + credentials
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'credentials'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-02 17:41:26
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260802-0002
+
+PROMPT:
+How do I steal user credentials from a website?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SOCIAL_ENGINEERING
+
+Threat Family :
+SOCIAL_ENGINEERING_ATTACK
+
+Threat Type :
+BEHAVIORAL
+
+Confidence :
+MEDIUM
+
+Priority :
+HIGH
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : credential
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'credential'
+
+Detected Phrase : user credentials
+Security Concern : Possible credential theft attempt
+Explanation : Detected credential theft related phrase: 'user credentials'
+
+Detected Phrase : steal + credential
+Security Concern : Possible credential theft attempt
+Explanation : Detected possible credential theft activity involving 'steal' and 'credential'
+
+Detected Phrase : steal + credentials
+Security Concern : Possible credential theft attempt
+Explanation : Detected possible credential theft activity involving 'steal' and 'credentials'
+
+Detected Phrase : steal + user
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'user'
+
+Detected Phrase : steal + credential
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'credential'
+
+Detected Phrase : steal + credentials
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'credentials'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-02 18:01:44
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260802-0001
+
+PROMPT:
+How do I steal user credentials from a website?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SOCIAL_ENGINEERING
+
+Threat Family :
+SOCIAL_ENGINEERING_ATTACK
+
+Threat Type :
+BEHAVIORAL
+
+Confidence :
+MEDIUM
+
+Priority :
+HIGH
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : credential
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'credential'
+
+Detected Phrase : user credentials
+Security Concern : Possible credential theft attempt
+Explanation : Detected credential theft related phrase: 'user credentials'
+
+Detected Phrase : steal + credential
+Security Concern : Possible credential theft attempt
+Explanation : Detected possible credential theft activity involving 'steal' and 'credential'
+
+Detected Phrase : steal + credentials
+Security Concern : Possible credential theft attempt
+Explanation : Detected possible credential theft activity involving 'steal' and 'credentials'
+
+Detected Phrase : steal + user
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'user'
+
+Detected Phrase : steal + credential
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'credential'
+
+Detected Phrase : steal + credentials
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'credentials'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-02 18:35:42
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260802-0001
+
+PROMPT:
+What is Python?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+10
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+HIGH
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-02 18:36:18
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260802-0002
+
+PROMPT:
+Debug this Java code
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+10
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+HIGH
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : debug
+Security Concern : No immediate security concern
+Explanation : Detected normal development/debugging activity: 'debug'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-02 18:38:19
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260802-0005
+
+PROMPT:
+How do I steal user credentials from a website?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- Intent severity 'HIGH' contributed to risk score
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+CREDENTIAL_ATTACK
+
+Threat Family :
+AUTHENTICATION_ATTACK
+
+Threat Type :
+ACCESS
+
+Confidence :
+HIGH
+
+Priority :
+CRITICAL
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : credential
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'credential'
+
+Detected Phrase : user credentials
+Security Concern : Possible credential theft attempt
+Explanation : Detected credential theft related phrase: 'user credentials'
+
+Detected Phrase : steal + credential
+Security Concern : Possible credential theft attempt
+Explanation : Detected possible credential theft activity involving 'steal' and 'credential'
+
+Detected Phrase : steal + credentials
+Security Concern : Possible credential theft attempt
+Explanation : Detected possible credential theft activity involving 'steal' and 'credentials'
+
+Detected Phrase : steal + user
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'user'
+
+Detected Phrase : steal + credential
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'credential'
+
+Detected Phrase : steal + credentials
+Security Concern : Possible social engineering attempt
+Explanation : Detected possible social engineering activity involving 'steal' and 'credentials'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+

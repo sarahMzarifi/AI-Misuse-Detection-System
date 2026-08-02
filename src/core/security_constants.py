@@ -67,3 +67,35 @@ INFO = "INFO"
 WARNING = "WARNING"
 
 CRITICAL = "CRITICAL"
+
+# -----------------------------------------
+# INTENT PRIORITY LEVELS
+# -----------------------------------------
+#
+# Used by the Intent Analyzer to resolve
+# multiple detected intents. The intent with
+# the highest priority becomes the final
+# classification for the request.
+# -----------------------------------------
+
+INTENT_PRIORITY = {
+
+    "INFORMATIONAL": 0,
+
+    "DEBUGGING": 10,
+
+    "DATA_EXPOSURE": 40,
+
+    "SOCIAL_ENGINEERING": 60,
+
+    "SYSTEM_MANIPULATION": 70,
+
+    "MALICIOUS_CODE_REQUEST": 80,
+
+    "PROMPT_INJECTION": 90,
+
+    "AUTH_BYPASS_ATTEMPT": 95,
+
+    "CREDENTIAL_THEFT": 100
+
+}
