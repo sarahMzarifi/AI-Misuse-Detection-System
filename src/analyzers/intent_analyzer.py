@@ -1,6 +1,10 @@
 from security.intent_resolver import (
     resolve_intent
 )
+
+from security.confidence_scorer import (
+    calculate_confidence
+)
 def analyze_intent(prompt):
 
     prompt_lower = prompt.lower()
@@ -47,7 +51,9 @@ def analyze_intent(prompt):
 
                 "intent": "AUTH_BYPASS_ATTEMPT",
 
-                "severity": "HIGH"
+                "severity": "HIGH",
+
+                "matched_phrase": keyword
 
             })
 
@@ -65,7 +71,6 @@ def analyze_intent(prompt):
         "production server",
         "server credential",
         "private server credential",
-        "credential",
         "internal api"
 
     ]
@@ -89,7 +94,10 @@ def analyze_intent(prompt):
 
                 "intent": "DATA_EXPOSURE",
 
-                "severity": "MEDIUM"
+                "severity": "MEDIUM",
+
+                "matched_phrase": keyword
+
             })
 
     # -----------------------------------------
@@ -138,7 +146,9 @@ def analyze_intent(prompt):
 
                 "intent": "CREDENTIAL_THEFT",
 
-                "severity": "HIGH"
+                "severity": "HIGH",
+
+                "matched_phrase": keyword
 
             })
 
@@ -177,11 +187,13 @@ def analyze_intent(prompt):
             if action in prompt_lower and target in prompt_lower:
 
                 detected_intents.append({
-
+                
                     "intent": "CREDENTIAL_THEFT",
-
-                    "severity": "HIGH"
-
+                
+                    "severity": "HIGH",
+                
+                    "matched_phrase": f"{action} + {target}"
+                
                 })
 
                 reasons.append({
@@ -238,11 +250,13 @@ def analyze_intent(prompt):
 
             })
             detected_intents.append({
-
+            
                 "intent": "PROMPT_INJECTION",
-
-                "severity": "HIGH"
-
+            
+                "severity": "HIGH",
+            
+                "matched_phrase": keyword
+            
             })
 
     # -----------------------------------------
@@ -275,11 +289,13 @@ def analyze_intent(prompt):
 
             })
             detected_intents.append({
-
+            
                 "intent": "SOCIAL_ENGINEERING",
-
-                "severity": "HIGH"
-
+            
+                "severity": "HIGH",
+            
+                "matched_phrase": keyword
+            
             })
 
     social_actions = [
@@ -289,7 +305,6 @@ def analyze_intent(prompt):
         "impersonate",
         "pretend",
         "deceive",
-        "steal",
         "harvest",
         "obtain"
 
@@ -299,9 +314,6 @@ def analyze_intent(prompt):
 
         "user",
         "employee",
-        "password",
-        "credential",
-        "credentials",
         "otp",
         "verification code",
         "login",
@@ -330,11 +342,13 @@ def analyze_intent(prompt):
 
                 })
                 detected_intents.append({
-
+                
                     "intent": "SOCIAL_ENGINEERING",
-
-                    "severity": "HIGH"
-
+                
+                    "severity": "HIGH",
+                
+                    "matched_phrase": f"{action} + {target}"
+                
                 })
 
     # -----------------------------------------
@@ -373,11 +387,13 @@ def analyze_intent(prompt):
 
             })
             detected_intents.append({
-
+            
                 "intent": "MALICIOUS_CODE_REQUEST",
-
-                "severity": "HIGH"
-
+            
+                "severity": "HIGH",
+            
+                "matched_phrase": keyword
+            
             })
 
     malicious_actions = [
@@ -428,11 +444,13 @@ def analyze_intent(prompt):
 
                 })
                 detected_intents.append({
-
+                
                     "intent": "MALICIOUS_CODE_REQUEST",
 
-                    "severity": "HIGH"
-
+                    "severity": "HIGH",
+                
+                    "matched_phrase": f"{action} + {target}"
+                
                 })
 
     # -----------------------------------------
@@ -478,11 +496,13 @@ def analyze_intent(prompt):
 
                 })
                 detected_intents.append({
-
+                
                     "intent": "SYSTEM_MANIPULATION",
-
-                    "severity": "HIGH"
-
+                
+                    "severity": "HIGH",
+                
+                    "matched_phrase": f"{action} + {target}"
+                
                 })
 
     # -----------------------------------------
@@ -515,11 +535,13 @@ def analyze_intent(prompt):
 
                 })
                 detected_intents.append({
-
+                
                     "intent": "DEBUGGING",
-
-                    "severity": "LOW"
-
+                
+                    "severity": "LOW",
+                
+                    "matched_phrase": keyword
+                
                 })
 
     # -----------------------------------------
@@ -541,30 +563,42 @@ def analyze_intent(prompt):
         })
 
         detected_intents.append({
-
+        
             "intent": "INFORMATIONAL",
-
-            "severity": "LOW"
-
+        
+            "severity": "LOW",
+        
+            "matched_phrase": None
+        
         })
 
     # -----------------------------------------
     # STRUCTURED OUTPUT
     # -----------------------------------------
-
+    
     resolved_intent = resolve_intent(
         detected_intents
     )
 
+    confidence = calculate_confidence(
+            detected_intents
+    )
+
     return {
 
-        "intent_type":
-        resolved_intent["intent_type"],
+    "intent_type":
+    resolved_intent["intent_type"],
 
-        "severity":
-        resolved_intent["severity"],
+    "severity":
+    resolved_intent["severity"],
 
-        "reasons":
-        reasons
+    "confidence":
+    confidence,
 
-    }
+    "reasons":
+    reasons,
+
+    "detected_intents":
+    detected_intents
+
+}

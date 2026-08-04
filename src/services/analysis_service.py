@@ -2,11 +2,6 @@ from detectors.sensitive_detector import (
     detect_sensitive_data
 )
 
-# OLD CLASSIFIER TEMPORARILY DISABLED
-# from classifiers.risk_classifier import (
-#     classify_risk
-# )
-
 from analyzers.intent_analyzer import (
     analyze_intent
 )
@@ -18,19 +13,25 @@ from scoring.risk_engine import (
 
 def analyze_prompt(prompt):
 
+    # -----------------------------------------
     # DETECTION STAGE
+    # -----------------------------------------
 
     detection_results = detect_sensitive_data(
         prompt
     )
 
+    # -----------------------------------------
     # INTENT ANALYSIS STAGE
+    # -----------------------------------------
 
     intent_analysis = analyze_intent(
         prompt
     )
 
+    # -----------------------------------------
     # CENTRALIZED RISK ENGINE
+    # -----------------------------------------
 
     risk_analysis = calculate_final_risk(
 
@@ -40,7 +41,9 @@ def analyze_prompt(prompt):
 
     )
 
+    # -----------------------------------------
     # UNIFIED STRUCTURED ANALYSIS OBJECT
+    # -----------------------------------------
 
     complete_analysis = {
 
@@ -59,6 +62,7 @@ def analyze_prompt(prompt):
 
             "reasons":
             risk_analysis["reasons"]
+
         },
 
         "intent_analysis": {
@@ -69,11 +73,18 @@ def analyze_prompt(prompt):
             "severity":
             intent_analysis["severity"],
 
+            "confidence":
+            intent_analysis["confidence"],
+
             "reasons":
             intent_analysis["reasons"]
+
         }
+
     }
 
+    # -----------------------------------------
     # RETURN FINAL STRUCTURED OBJECT
+    # -----------------------------------------
 
     return complete_analysis
