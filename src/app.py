@@ -289,7 +289,9 @@ def analyze(request: PromptRequest):
 
                 threat_classification,
 
-                pattern_analysis
+                pattern_analysis,
+
+                analysis_result["intent_analysis"]["confidence"]
 
             )
         )

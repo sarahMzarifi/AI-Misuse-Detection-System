@@ -5,6 +5,27 @@ from security.intent_resolver import (
 from security.confidence_scorer import (
     calculate_confidence
 )
+
+
+def create_detection(
+    intent,
+    severity,
+    matched_phrase,
+    detector
+):
+
+    return {
+
+        "intent": intent,
+
+        "severity": severity,
+
+        "matched_phrase": matched_phrase,
+
+        "detector": detector
+
+    }
+
 def analyze_intent(prompt):
 
     prompt_lower = prompt.lower()
@@ -47,15 +68,14 @@ def analyze_intent(prompt):
                 f"Detected suspicious authentication-related phrase: '{keyword}'"
 
             })
-            detected_intents.append({
-
-                "intent": "AUTH_BYPASS_ATTEMPT",
-
-                "severity": "HIGH",
-
-                "matched_phrase": keyword
-
-            })
+            detected_intents.append(
+                create_detection(
+                    "AUTH_BYPASS_ATTEMPT",
+                    "HIGH",
+                    keyword,
+                    "AuthenticationBypassDetector"
+                )
+            )
 
     # -----------------------------------------
     # DATA EXPOSURE DETECTION
@@ -90,15 +110,14 @@ def analyze_intent(prompt):
                 f"Detected sensitive infrastructure or data reference: '{keyword}'"
 
             })
-            detected_intents.append({
-
-                "intent": "DATA_EXPOSURE",
-
-                "severity": "MEDIUM",
-
-                "matched_phrase": keyword
-
-            })
+            detected_intents.append(
+                    create_detection(
+                    "DATA_EXPOSURE",
+                    "MEDIUM",
+                    keyword,
+                    "DataExposureDetector"
+                )
+            )
 
     # -----------------------------------------
     # CREDENTIAL THEFT DETECTION
@@ -142,15 +161,14 @@ def analyze_intent(prompt):
                 f"Detected credential theft related phrase: '{keyword}'"
 
             })
-            detected_intents.append({
-
-                "intent": "CREDENTIAL_THEFT",
-
-                "severity": "HIGH",
-
-                "matched_phrase": keyword
-
-            })
+            detected_intents.append(
+                create_detection(
+                    "CREDENTIAL_THEFT",
+                    "HIGH",
+                    keyword,
+                    "CredentialTheftDetector"
+                )
+            )
 
     credential_theft_actions = [
 
@@ -186,15 +204,14 @@ def analyze_intent(prompt):
 
             if action in prompt_lower and target in prompt_lower:
 
-                detected_intents.append({
-                
-                    "intent": "CREDENTIAL_THEFT",
-                
-                    "severity": "HIGH",
-                
-                    "matched_phrase": f"{action} + {target}"
-                
-                })
+                detected_intents.append(
+                    create_detection(
+                        "CREDENTIAL_THEFT",
+                        "HIGH",
+                        f"{action} + {target}",
+                        "CredentialTheftDetector"
+                    )
+                )
 
                 reasons.append({
 
@@ -249,15 +266,14 @@ def analyze_intent(prompt):
                 f"Detected prompt injection phrase: '{keyword}'"
 
             })
-            detected_intents.append({
-            
-                "intent": "PROMPT_INJECTION",
-            
-                "severity": "HIGH",
-            
-                "matched_phrase": keyword
-            
-            })
+            detected_intents.append(
+                create_detection(
+                    "PROMPT_INJECTION",
+                    "HIGH",
+                    keyword,
+                    "PromptInjectionDetector"
+                )
+            )
 
     # -----------------------------------------
     # SOCIAL ENGINEERING DETECTION
@@ -288,15 +304,14 @@ def analyze_intent(prompt):
                 f"Detected social engineering phrase: '{keyword}'"
 
             })
-            detected_intents.append({
-            
-                "intent": "SOCIAL_ENGINEERING",
-            
-                "severity": "HIGH",
-            
-                "matched_phrase": keyword
-            
-            })
+            detected_intents.append(
+                create_detection(
+                    "SOCIAL_ENGINEERING",
+                    "HIGH",
+                    keyword,
+                    "SocialEngineeringDetector"
+                )
+            )
 
     social_actions = [
 
@@ -341,15 +356,14 @@ def analyze_intent(prompt):
                     f"Detected possible social engineering activity involving '{action}' and '{target}'"
 
                 })
-                detected_intents.append({
-                
-                    "intent": "SOCIAL_ENGINEERING",
-                
-                    "severity": "HIGH",
-                
-                    "matched_phrase": f"{action} + {target}"
-                
-                })
+                detected_intents.append(
+                    create_detection(
+                        "SOCIAL_ENGINEERING",
+                        "HIGH",
+                        f"{action} + {target}",
+                        "SocialEngineeringDetector"
+                    )
+                )
 
     # -----------------------------------------
     # MALICIOUS CODE DETECTION
@@ -386,15 +400,14 @@ def analyze_intent(prompt):
                 f"Detected malicious software reference: '{keyword}'"
 
             })
-            detected_intents.append({
-            
-                "intent": "MALICIOUS_CODE_REQUEST",
-            
-                "severity": "HIGH",
-            
-                "matched_phrase": keyword
-            
-            })
+            detected_intents.append(
+                create_detection(
+                    "MALICIOUS_CODE_REQUEST",
+                    "HIGH",
+                    keyword,
+                    "MaliciousCodeDetector"
+                )
+            )
 
     malicious_actions = [
 
@@ -443,15 +456,14 @@ def analyze_intent(prompt):
                     f"Detected possible malicious code generation involving '{action}' and '{target}'"
 
                 })
-                detected_intents.append({
-                
-                    "intent": "MALICIOUS_CODE_REQUEST",
-
-                    "severity": "HIGH",
-                
-                    "matched_phrase": f"{action} + {target}"
-                
-                })
+                detected_intents.append(
+                    create_detection(
+                        "MALICIOUS_CODE_REQUEST",
+                        "HIGH",
+                        f"{action} + {target}",
+                        "MaliciousCodeDetector"
+                    )
+                )
 
     # -----------------------------------------
     # SYSTEM MANIPULATION DETECTION
@@ -495,15 +507,14 @@ def analyze_intent(prompt):
                     f"Detected possible system manipulation intent involving '{action}' and '{target}'"
 
                 })
-                detected_intents.append({
-                
-                    "intent": "SYSTEM_MANIPULATION",
-                
-                    "severity": "HIGH",
-                
-                    "matched_phrase": f"{action} + {target}"
-                
-                })
+                detected_intents.append(
+                    create_detection(
+                        "SYSTEM_MANIPULATION",
+                        "HIGH",
+                        f"{action} + {target}",
+                        "SystemManipulationDetector"
+                    )
+                )
 
     # -----------------------------------------
     # DEBUGGING / NORMAL DEVELOPMENT DETECTION
@@ -534,15 +545,14 @@ def analyze_intent(prompt):
                     f"Detected normal development/debugging activity: '{keyword}'"
 
                 })
-                detected_intents.append({
-                
-                    "intent": "DEBUGGING",
-                
-                    "severity": "LOW",
-                
-                    "matched_phrase": keyword
-                
-                })
+                detected_intents.append(
+                    create_detection(
+                        "DEBUGGING",
+                        "LOW",
+                        keyword,
+                        "DebuggingDetector"
+                    )
+                )
 
     # -----------------------------------------
     # DEFAULT SAFE CLASSIFICATION
@@ -562,15 +572,14 @@ def analyze_intent(prompt):
 
         })
 
-        detected_intents.append({
-        
-            "intent": "INFORMATIONAL",
-        
-            "severity": "LOW",
-        
-            "matched_phrase": None
-        
-        })
+        detected_intents.append(
+            create_detection(
+                "INFORMATIONAL",
+                "LOW",
+                None,
+                "InformationalDetector"
+            )
+        )
 
     # -----------------------------------------
     # STRUCTURED OUTPUT

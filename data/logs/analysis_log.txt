@@ -5215,3 +5215,743 @@ END OF FORENSIC ANALYSIS REPORT
 END OF RECORD
 ================================================
 
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-08 11:56:42
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260808-0002
+
+PROMPT:
+Explain Python functions with examples.
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+HIGH
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-08 12:24:20
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260808-0003
+
+PROMPT:
+Explain Python functions with examples.
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+HIGH
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-08 12:24:22
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260808-0004
+
+PROMPT:
+Explain Python functions with examples.
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+HIGH
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-08 12:24:24
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260808-0005
+
+PROMPT:
+Explain Python functions with examples.
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+HIGH
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-08 12:44:34
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260808-0002
+
+PROMPT:
+Explain Python functions with examples.
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+HIGH
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-08 13:09:37
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260808-0002
+
+PROMPT:
+Explain Python functions with examples.
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+HIGH
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-08 13:10:38
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260808-0003
+
+PROMPT:
+Debug this Python function and explain why it returns the wrong value.
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+HIGH
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : debug
+Security Concern : No immediate security concern
+Explanation : Detected normal development/debugging activity: 'debug'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-08 13:14:31
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260808-0001
+
+PROMPT:
+This is the API key sk-test123. Explain what an API key is.
+
+================================================
+DETECTION RESULTS
+================================================
+{'type': 'API_KEY_DETECTED', 'severity': 'HIGH', 'matched_values': ['sk-test123'], 'detector': 'SensitiveDataDetector'}
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- API_KEY_DETECTED contributed to risk score
+- Intent severity 'MEDIUM' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+DATA_EXFILTRATION
+
+Threat Family :
+INFORMATION_DISCLOSURE
+
+Threat Type :
+DATA
+
+Confidence :
+LOW
+
+Priority :
+MEDIUM
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : api key
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'api key'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-08-08 13:14:43
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260808-0002
+
+PROMPT:
+This is the API key sk-test123. Explain what an API key is.
+
+================================================
+DETECTION RESULTS
+================================================
+{'type': 'API_KEY_DETECTED', 'severity': 'HIGH', 'matched_values': ['sk-test123'], 'detector': 'SensitiveDataDetector'}
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+HIGH
+
+Risk Score :
+80
+
+RISK REASONS:
+- API_KEY_DETECTED contributed to risk score
+- Intent severity 'MEDIUM' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+DATA_EXFILTRATION
+
+Threat Family :
+INFORMATION_DISCLOSURE
+
+Threat Type :
+DATA
+
+Confidence :
+LOW
+
+Priority :
+MEDIUM
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : api key
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'api key'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+

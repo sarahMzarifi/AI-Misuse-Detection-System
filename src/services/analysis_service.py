@@ -77,7 +77,10 @@ def analyze_prompt(prompt):
             intent_analysis["confidence"],
 
             "reasons":
-            intent_analysis["reasons"]
+            intent_analysis["reasons"],
+
+            "detected_intents":
+            intent_analysis["detected_intents"]
 
         }
 

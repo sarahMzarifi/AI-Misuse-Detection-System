@@ -4,8 +4,8 @@
 
 """
 This module is responsible for selecting the
-highest-priority intent detected during prompt
-analysis.
+best-supported primary intent detected during
+prompt analysis.
 
 The Intent Analyzer is responsible only for
 detecting suspicious behaviors.
@@ -14,14 +14,36 @@ This resolver is responsible for deciding
 which detected intent becomes the final
 intent classification.
 
-Keeping this logic separate improves
-maintainability, scalability, and follows
-the Single Responsibility Principle (SRP).
+Decision order:
+
+1. Intent priority
+2. Severity
+3. Number of supporting detections
+
+This keeps the resolver deterministic while
+using the richer detection objects introduced
+by the confidence and standard detection stages.
 """
 
 from core.security_constants import (
     INTENT_PRIORITY
 )
+
+
+# -----------------------------------------
+# SEVERITY PRIORITY
+# -----------------------------------------
+
+SEVERITY_PRIORITY = {
+
+    "LOW": 1,
+
+    "MEDIUM": 2,
+
+    "HIGH": 3
+
+}
+
 
 # -----------------------------------------
 # RESOLVE FINAL INTENT
@@ -30,20 +52,20 @@ from core.security_constants import (
 def resolve_intent(detected_intents):
 
     """
-    Selects the highest-priority intent from
-    all detected intents.
+    Selects the best-supported primary intent
+    from all detected intents.
 
     Parameters
     ----------
     detected_intents : list
 
-        List containing dictionaries in the
-        following format:
+        List containing detection objects such as:
 
         {
             "intent": "...",
             "severity": "...",
-            "reason": {...}
+            "matched_phrase": "...",
+            "detector": "..."
         }
 
     Returns
@@ -67,39 +89,149 @@ def resolve_intent(detected_intents):
 
         }
 
+
+    # -----------------------------------------
+    # COUNT SUPPORTING DETECTIONS
+    # -----------------------------------------
+
+    intent_support = {}
+
+    for detection in detected_intents:
+
+        intent = detection.get(
+            "intent"
+        )
+
+        if intent:
+
+            intent_support[intent] = (
+                intent_support.get(intent, 0) + 1
+            )
+
+
     # -----------------------------------------
     # INITIALIZE WINNER
     # -----------------------------------------
 
     winning_intent = detected_intents[0]
 
+    winning_intent_name = winning_intent.get(
+        "intent"
+    )
+
     highest_priority = INTENT_PRIORITY.get(
 
-        winning_intent["intent"],
+        winning_intent_name,
 
         0
 
     )
 
+    highest_severity = SEVERITY_PRIORITY.get(
+
+        winning_intent.get(
+            "severity",
+            "LOW"
+        ),
+
+        1
+
+    )
+
+    highest_support = intent_support.get(
+
+        winning_intent_name,
+
+        1
+
+    )
+
+
     # -----------------------------------------
     # COMPARE ALL DETECTED INTENTS
     # -----------------------------------------
 
-    for detected in detected_intents[1:]:
+    for detected in detected_intents:
+
+        intent = detected.get(
+            "intent"
+        )
 
         current_priority = INTENT_PRIORITY.get(
 
-            detected["intent"],
+            intent,
 
             0
 
         )
 
+        current_severity = SEVERITY_PRIORITY.get(
+
+            detected.get(
+                "severity",
+                "LOW"
+            ),
+
+            1
+
+        )
+
+        current_support = intent_support.get(
+
+            intent,
+
+            1
+
+        )
+
+
+        # -------------------------------------
+        # PRIORITY IS THE PRIMARY FACTOR
+        # -------------------------------------
+
         if current_priority > highest_priority:
+
+            winning_intent = detected
 
             highest_priority = current_priority
 
-            winning_intent = detected
+            highest_severity = current_severity
+
+            highest_support = current_support
+
+            continue
+
+
+        # -------------------------------------
+        # SEVERITY BREAKS PRIORITY TIES
+        # -------------------------------------
+
+        if current_priority == highest_priority:
+
+            if current_severity > highest_severity:
+
+                winning_intent = detected
+
+                highest_severity = current_severity
+
+                highest_support = current_support
+
+                continue
+
+
+            # ---------------------------------
+            # SUPPORTING EVIDENCE BREAKS TIES
+            # ---------------------------------
+
+            if (
+                current_severity == highest_severity
+                and current_support > highest_support
+            ):
+
+                winning_intent = detected
+
+                highest_support = current_support
+
 
     # -----------------------------------------
     # RETURN FINAL DECISION
@@ -113,6 +245,9 @@ def resolve_intent(detected_intents):
 
         "severity":
 
-        winning_intent["severity"]
+        winning_intent.get(
+            "severity",
+            "LOW"
+        )
 
     }
