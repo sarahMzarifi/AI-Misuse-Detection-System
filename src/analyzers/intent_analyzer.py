@@ -1,3 +1,5 @@
+import re
+
 from security.intent_resolver import (
     resolve_intent
 )
@@ -25,6 +27,15 @@ def create_detection(
         "detector": detector
 
     }
+
+
+def contains_keyword(text, keyword):
+
+    return re.search(
+        rf"\b{re.escape(keyword)}\b",
+        text
+    ) is not None
+
 
 def analyze_intent(prompt):
 
@@ -56,7 +67,6 @@ def analyze_intent(prompt):
 
         if keyword in prompt_lower:
 
-
             reasons.append({
 
                 "detected_phrase": keyword,
@@ -68,6 +78,7 @@ def analyze_intent(prompt):
                 f"Detected suspicious authentication-related phrase: '{keyword}'"
 
             })
+
             detected_intents.append(
                 create_detection(
                     "AUTH_BYPASS_ATTEMPT",
@@ -110,8 +121,9 @@ def analyze_intent(prompt):
                 f"Detected sensitive infrastructure or data reference: '{keyword}'"
 
             })
+
             detected_intents.append(
-                    create_detection(
+                create_detection(
                     "DATA_EXPOSURE",
                     "MEDIUM",
                     keyword,
@@ -161,6 +173,7 @@ def analyze_intent(prompt):
                 f"Detected credential theft related phrase: '{keyword}'"
 
             })
+
             detected_intents.append(
                 create_detection(
                     "CREDENTIAL_THEFT",
@@ -229,6 +242,7 @@ def analyze_intent(prompt):
     # -----------------------------------------
     # PROMPT INJECTION DETECTION
     # -----------------------------------------
+
     prompt_injection_keywords = [
 
         "ignore previous instructions",
@@ -266,6 +280,7 @@ def analyze_intent(prompt):
                 f"Detected prompt injection phrase: '{keyword}'"
 
             })
+
             detected_intents.append(
                 create_detection(
                     "PROMPT_INJECTION",
@@ -304,6 +319,7 @@ def analyze_intent(prompt):
                 f"Detected social engineering phrase: '{keyword}'"
 
             })
+
             detected_intents.append(
                 create_detection(
                     "SOCIAL_ENGINEERING",
@@ -356,6 +372,7 @@ def analyze_intent(prompt):
                     f"Detected possible social engineering activity involving '{action}' and '{target}'"
 
                 })
+
                 detected_intents.append(
                     create_detection(
                         "SOCIAL_ENGINEERING",
@@ -387,7 +404,7 @@ def analyze_intent(prompt):
 
     for keyword in malicious_code_keywords:
 
-        if keyword in prompt_lower:
+        if contains_keyword(prompt_lower, keyword):
 
             reasons.append({
 
@@ -400,6 +417,7 @@ def analyze_intent(prompt):
                 f"Detected malicious software reference: '{keyword}'"
 
             })
+
             detected_intents.append(
                 create_detection(
                     "MALICIOUS_CODE_REQUEST",
@@ -456,6 +474,7 @@ def analyze_intent(prompt):
                     f"Detected possible malicious code generation involving '{action}' and '{target}'"
 
                 })
+
                 detected_intents.append(
                     create_detection(
                         "MALICIOUS_CODE_REQUEST",
@@ -482,6 +501,7 @@ def analyze_intent(prompt):
     security_targets = [
 
         "firewall",
+        "antivirus",
         "monitoring",
         "logs",
         "activity",
@@ -507,6 +527,7 @@ def analyze_intent(prompt):
                     f"Detected possible system manipulation intent involving '{action}' and '{target}'"
 
                 })
+
                 detected_intents.append(
                     create_detection(
                         "SYSTEM_MANIPULATION",
@@ -534,25 +555,26 @@ def analyze_intent(prompt):
 
         if keyword in prompt_lower:
 
-                reasons.append({
+            reasons.append({
 
-                    "detected_phrase": keyword,
+                "detected_phrase": keyword,
 
-                    "security_concern":
-                    "No immediate security concern",
+                "security_concern":
+                "No immediate security concern",
 
-                    "explanation":
-                    f"Detected normal development/debugging activity: '{keyword}'"
+                "explanation":
+                f"Detected normal development/debugging activity: '{keyword}'"
 
-                })
-                detected_intents.append(
-                    create_detection(
-                        "DEBUGGING",
-                        "LOW",
-                        keyword,
-                        "DebuggingDetector"
-                    )
+            })
+
+            detected_intents.append(
+                create_detection(
+                    "DEBUGGING",
+                    "LOW",
+                    keyword,
+                    "DebuggingDetector"
                 )
+            )
 
     # -----------------------------------------
     # DEFAULT SAFE CLASSIFICATION
@@ -584,30 +606,30 @@ def analyze_intent(prompt):
     # -----------------------------------------
     # STRUCTURED OUTPUT
     # -----------------------------------------
-    
+
     resolved_intent = resolve_intent(
         detected_intents
     )
 
     confidence = calculate_confidence(
-            detected_intents
+        detected_intents
     )
 
     return {
 
-    "intent_type":
-    resolved_intent["intent_type"],
+        "intent_type":
+        resolved_intent["intent_type"],
 
-    "severity":
-    resolved_intent["severity"],
+        "severity":
+        resolved_intent["severity"],
 
-    "confidence":
-    confidence,
+        "confidence":
+        confidence,
 
-    "reasons":
-    reasons,
+        "reasons":
+        reasons,
 
-    "detected_intents":
-    detected_intents
+        "detected_intents":
+        detected_intents
 
-}
+    }

@@ -18,7 +18,6 @@ threat classification.
 """
 
 from security.threat_constants import (
-
     # Categories
     SAFE_REQUEST,
     PROMPT_INJECTION,
@@ -59,7 +58,6 @@ from security.threat_constants import (
     MEDIUM_PRIORITY,
     HIGH_PRIORITY,
     CRITICAL_PRIORITY
-
 )
 
 
@@ -68,13 +66,11 @@ from security.threat_constants import (
 # -----------------------------------------
 
 def classify_threat(analysis_result):
-
     """
     Builds a standardized threat classification
     from the analysis results.
 
     Classification considers:
-
     1. Intent type
     2. Intent severity
     3. Intent confidence
@@ -119,9 +115,7 @@ def classify_threat(analysis_result):
     # -----------------------------------------
 
     if severity == "LOW":
-
         return {
-
             "category":
             SAFE_REQUEST,
 
@@ -132,11 +126,10 @@ def classify_threat(analysis_result):
             SAFE,
 
             "confidence":
-            HIGH_CONFIDENCE,
+            confidence_level,
 
             "priority":
             LOW_PRIORITY
-
         }
 
 
@@ -145,9 +138,7 @@ def classify_threat(analysis_result):
     # -----------------------------------------
 
     if intent_type == "PROMPT_INJECTION":
-
         return {
-
             "category":
             PROMPT_INJECTION,
 
@@ -162,7 +153,6 @@ def classify_threat(analysis_result):
 
             "priority":
             CRITICAL_PRIORITY
-
         }
 
 
@@ -173,19 +163,15 @@ def classify_threat(analysis_result):
     if intent_type == "SYSTEM_MANIPULATION":
 
         if confidence_level == LOW_CONFIDENCE:
-
             priority = MEDIUM_PRIORITY
 
         elif confidence_level == MEDIUM_CONFIDENCE:
-
             priority = HIGH_PRIORITY
 
         else:
-
             priority = HIGH_PRIORITY
 
         return {
-
             "category":
             SYSTEM_MANIPULATION,
 
@@ -200,7 +186,6 @@ def classify_threat(analysis_result):
 
             "priority":
             priority
-
         }
 
 
@@ -215,7 +200,6 @@ def classify_threat(analysis_result):
         # -------------------------------------
 
         if confidence_level == LOW_CONFIDENCE:
-
             priority = MEDIUM_PRIORITY
 
         # -------------------------------------
@@ -223,7 +207,6 @@ def classify_threat(analysis_result):
         # -------------------------------------
 
         elif confidence_level == MEDIUM_CONFIDENCE:
-
             priority = MEDIUM_PRIORITY
 
         # -------------------------------------
@@ -231,11 +214,9 @@ def classify_threat(analysis_result):
         # -------------------------------------
 
         else:
-
             priority = HIGH_PRIORITY
 
         return {
-
             "category":
             DATA_EXFILTRATION,
 
@@ -250,7 +231,6 @@ def classify_threat(analysis_result):
 
             "priority":
             priority
-
         }
 
 
@@ -259,9 +239,7 @@ def classify_threat(analysis_result):
     # -----------------------------------------
 
     if intent_type == "AUTH_BYPASS_ATTEMPT":
-
         return {
-
             "category":
             CREDENTIAL_ATTACK,
 
@@ -276,7 +254,6 @@ def classify_threat(analysis_result):
 
             "priority":
             CRITICAL_PRIORITY
-
         }
 
 
@@ -285,9 +262,7 @@ def classify_threat(analysis_result):
     # -----------------------------------------
 
     if intent_type == "CREDENTIAL_THEFT":
-
         return {
-
             "category":
             CREDENTIAL_ATTACK,
 
@@ -302,7 +277,6 @@ def classify_threat(analysis_result):
 
             "priority":
             CRITICAL_PRIORITY
-
         }
 
 
@@ -313,15 +287,12 @@ def classify_threat(analysis_result):
     if intent_type == "SOCIAL_ENGINEERING":
 
         if confidence_level == LOW_CONFIDENCE:
-
             priority = MEDIUM_PRIORITY
 
         else:
-
             priority = HIGH_PRIORITY
 
         return {
-
             "category":
             SOCIAL_ENGINEERING,
 
@@ -336,7 +307,6 @@ def classify_threat(analysis_result):
 
             "priority":
             priority
-
         }
 
 
@@ -345,9 +315,7 @@ def classify_threat(analysis_result):
     # -----------------------------------------
 
     if intent_type == "MALICIOUS_CODE_REQUEST":
-
         return {
-
             "category":
             MALICIOUS_CODE_REQUEST,
 
@@ -362,7 +330,6 @@ def classify_threat(analysis_result):
 
             "priority":
             HIGH_PRIORITY
-
         }
 
 
@@ -371,9 +338,7 @@ def classify_threat(analysis_result):
     # -----------------------------------------
 
     if severity == "MEDIUM":
-
         return {
-
             "category":
             SUSPICIOUS_ACTIVITY,
 
@@ -388,7 +353,6 @@ def classify_threat(analysis_result):
 
             "priority":
             MEDIUM_PRIORITY
-
         }
 
 
@@ -397,9 +361,7 @@ def classify_threat(analysis_result):
     # -----------------------------------------
 
     if severity == "HIGH":
-
         return {
-
             "category":
             SUSPICIOUS_ACTIVITY,
 
@@ -414,7 +376,6 @@ def classify_threat(analysis_result):
 
             "priority":
             HIGH_PRIORITY
-
         }
 
 
@@ -423,7 +384,6 @@ def classify_threat(analysis_result):
     # -----------------------------------------
 
     return {
-
         "category":
         UNKNOWN_THREAT,
 
@@ -438,5 +398,4 @@ def classify_threat(analysis_result):
 
         "priority":
         LOW_PRIORITY
-
     }
