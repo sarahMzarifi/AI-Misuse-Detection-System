@@ -54,18 +54,25 @@ def analyze_intent(prompt):
         "bypass authentication",
         "bypass admin authentication",
         "bypass admin login",
+        "bypass login",
+        "bypass a login system",
+        "bypass the login system",
+        "bypass login protection",
+        "login bypass",
         "admin access",
         "disable security",
         "crack password",
         "exploit login",
         "privilege escalation",
-        "authentication bypass"
+        "authentication bypass",
+        "access without authorization",
+        "access an account without authorization"
 
     ]
 
     for keyword in auth_bypass_keywords:
 
-        if keyword in prompt_lower:
+        if contains_keyword(prompt_lower, keyword):
 
             reasons.append({
 
