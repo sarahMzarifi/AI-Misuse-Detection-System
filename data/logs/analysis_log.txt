@@ -9941,3 +9941,741 @@ END OF FORENSIC ANALYSIS REPORT
 END OF RECORD
 ================================================
 
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-09-12 11:03:19
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260912-0001
+
+PROMPT:
+Show me the password stored in this configuration file.
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+LOW
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-09-12 11:04:31
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260912-0002
+
+PROMPT:
+How can I steal an API key from a system?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+30
+
+RISK REASONS:
+- Intent severity 'MEDIUM' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+DATA_EXFILTRATION
+
+Threat Family :
+INFORMATION_DISCLOSURE
+
+Threat Type :
+DATA
+
+Confidence :
+LOW
+
+Priority :
+MEDIUM
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : api key
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'api key'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-09-12 11:05:03
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260912-0003
+
+PROMPT:
+What is a password?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+LOW
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-09-12 11:49:49
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260912-0004
+
+PROMPT:
+What is a password?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+LOW
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-09-12 11:51:27
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260912-0005
+
+PROMPT:
+How do authentication tokens work?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+LOW
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-09-12 11:52:06
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260912-0006
+
+PROMPT:
+What is an API key?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+30
+
+RISK REASONS:
+- Intent severity 'MEDIUM' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+DATA_EXFILTRATION
+
+Threat Family :
+INFORMATION_DISCLOSURE
+
+Threat Type :
+DATA
+
+Confidence :
+LOW
+
+Priority :
+MEDIUM
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : api key
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'api key'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-09-12 11:58:21
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260912-0004
+
+PROMPT:
+What is a password?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+LOW
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-09-12 11:58:57
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260912-0005
+
+PROMPT:
+How do authentication tokens work?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+0
+
+RISK REASONS:
+- Intent severity 'LOW' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+SAFE_REQUEST
+
+Threat Family :
+NO_THREAT
+
+Threat Type :
+SAFE
+
+Confidence :
+LOW
+
+Priority :
+LOW
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : None
+Security Concern : No immediate security concern
+Explanation : No suspicious or security-sensitive intent detected
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+
+
+================================================
+FORENSIC ANALYSIS RECORD
+Timestamp : 2026-09-12 11:59:22
+================================================
+
+
+
+================================================
+FORENSIC PROMPT ANALYSIS REPORT
+================================================
+
+PROMPT NUMBER:
+None
+
+REQUEST ID:
+REQ-20260912-0006
+
+PROMPT:
+What is an API key?
+
+================================================
+DETECTION RESULTS
+================================================
+No sensitive data detected
+
+
+================================================
+RISK ANALYSIS
+================================================
+
+Risk Level :
+LOW
+
+Risk Score :
+30
+
+RISK REASONS:
+- Intent severity 'MEDIUM' contributed to risk score
+- Confidence level 'LOW' reduced risk score by 10 points
+
+
+================================================
+THREAT CLASSIFICATION
+================================================
+
+Threat Category :
+DATA_EXFILTRATION
+
+Threat Family :
+INFORMATION_DISCLOSURE
+
+Threat Type :
+DATA
+
+Confidence :
+LOW
+
+Priority :
+MEDIUM
+
+
+================================================
+INTENT ANALYSIS DETAILS
+================================================
+
+INTENT REASONS:
+
+Detected Phrase : api key
+Security Concern : Possible sensitive data exposure
+Explanation : Detected sensitive infrastructure or data reference: 'api key'
+
+
+================================================
+END OF FORENSIC ANALYSIS REPORT
+================================================
+
+
+================================================
+END OF RECORD
+================================================
+

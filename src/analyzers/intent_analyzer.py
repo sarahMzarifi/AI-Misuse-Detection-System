@@ -144,6 +144,7 @@ def analyze_intent(prompt):
 
     credential_theft_keywords = [
 
+        "show me the password stored in this configuration file",
         "steal password",
         "steal credentials",
         "dump credentials",
@@ -153,7 +154,6 @@ def analyze_intent(prompt):
         "password database",
         "login credentials",
         "user credentials",
-        "authentication token",
         "api token",
         "access token",
         "refresh token",
@@ -208,6 +208,10 @@ def analyze_intent(prompt):
         "passwords",
         "credential",
         "credentials",
+        "authentication token",
+        "authentication tokens",
+        "api key",
+        "api keys",
         "token",
         "tokens",
         "cookie",
@@ -223,6 +227,24 @@ def analyze_intent(prompt):
         for target in credential_theft_targets:
 
             if action in prompt_lower and target in prompt_lower:
+
+                # Avoid duplicate detections when a specific target
+                # already contains a more generic target.
+                overlapping_target = False
+
+                for other_target in credential_theft_targets:
+
+                    if (
+                        other_target != target
+                        and len(other_target) > len(target)
+                        and target in other_target
+                        and other_target in prompt_lower
+                    ):
+                        overlapping_target = True
+                        break
+
+                if overlapping_target:
+                    continue
 
                 detected_intents.append(
                     create_detection(
