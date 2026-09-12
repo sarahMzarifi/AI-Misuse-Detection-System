@@ -19,6 +19,7 @@ threat classification.
 
 from security.threat_constants import (
     # Categories
+
     SAFE_REQUEST,
     PROMPT_INJECTION,
     SYSTEM_MANIPULATION,
@@ -30,6 +31,7 @@ from security.threat_constants import (
     UNKNOWN_THREAT,
 
     # Families
+
     NO_THREAT,
     INSTRUCTION_MANIPULATION,
     INFORMATION_DISCLOSURE,
@@ -40,6 +42,7 @@ from security.threat_constants import (
     UNCLASSIFIED,
 
     # Types
+
     SAFE,
     BEHAVIORAL,
     SYSTEM,
@@ -49,11 +52,13 @@ from security.threat_constants import (
     UNKNOWN,
 
     # Confidence
+
     LOW_CONFIDENCE,
     MEDIUM_CONFIDENCE,
     HIGH_CONFIDENCE,
 
     # Priority
+
     LOW_PRIORITY,
     MEDIUM_PRIORITY,
     HIGH_PRIORITY,
@@ -196,22 +201,21 @@ def classify_threat(analysis_result):
     if intent_type == "DATA_EXPOSURE":
 
         # -------------------------------------
-        # LOW CONFIDENCE
+        # HIGH SEVERITY
         # -------------------------------------
 
-        if confidence_level == LOW_CONFIDENCE:
+        if severity == "HIGH":
+            priority = HIGH_PRIORITY
+
+        # -------------------------------------
+        # MEDIUM / LOW SEVERITY
+        # -------------------------------------
+
+        elif confidence_level == LOW_CONFIDENCE:
             priority = MEDIUM_PRIORITY
-
-        # -------------------------------------
-        # MEDIUM CONFIDENCE
-        # -------------------------------------
 
         elif confidence_level == MEDIUM_CONFIDENCE:
             priority = MEDIUM_PRIORITY
-
-        # -------------------------------------
-        # HIGH CONFIDENCE
-        # -------------------------------------
 
         else:
             priority = HIGH_PRIORITY

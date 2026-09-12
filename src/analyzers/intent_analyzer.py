@@ -113,9 +113,63 @@ def analyze_intent(prompt):
 
     ]
 
+    data_exposure_actions = [
+
+        "show",
+        "display",
+        "give",
+        "provide",
+        "reveal",
+        "expose"
+
+    ]
+
+    data_exposure_contexts = [
+
+        "stored",
+        "saved",
+        "in the configuration file",
+        "in the application",
+        "on the server",
+        "in the system",
+        "from the configuration file",
+        "from the application",
+        "from the server",
+        "from the system"
+
+    ]
+
     for keyword in data_exposure_keywords:
 
         if keyword in prompt_lower:
+
+            acquisition_action_detected = any(
+                contains_keyword(prompt_lower, action)
+                for action in data_exposure_actions
+            )
+
+            storage_context_detected = any(
+                contains_keyword(prompt_lower, context)
+                for context in data_exposure_contexts
+            )
+
+            if acquisition_action_detected and storage_context_detected:
+
+                severity = "HIGH"
+
+                explanation = (
+                    f"Detected a request to expose sensitive data "
+                    f"'{keyword}' from a stored or system source"
+                )
+
+            else:
+
+                severity = "MEDIUM"
+
+                explanation = (
+                    f"Detected sensitive infrastructure or data reference: "
+                    f"'{keyword}'"
+                )
 
             reasons.append({
 
@@ -125,14 +179,14 @@ def analyze_intent(prompt):
                 "Possible sensitive data exposure",
 
                 "explanation":
-                f"Detected sensitive infrastructure or data reference: '{keyword}'"
+                explanation
 
             })
 
             detected_intents.append(
                 create_detection(
                     "DATA_EXPOSURE",
-                    "MEDIUM",
+                    severity,
                     keyword,
                     "DataExposureDetector"
                 )
